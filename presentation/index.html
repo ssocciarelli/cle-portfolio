@@ -102,31 +102,34 @@
   </div>
   <h1 class="serif" style="font-size:clamp(24px,4vw,40px);margin:0">The key to Quebec real estate</h1>
   <p>A 2-minute animated presentation with voice-over. Sit back — no clicking needed. Audio on. 🎧</p>
-  <button id="play">▶ &nbsp;Play the presentation</button>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <button id="play" data-lang="en">▶ &nbsp;Play in English</button>
+    <button id="play-fr" data-lang="fr" style="background:transparent;border:2px solid var(--gold);color:var(--goldl);font-size:19px;font-weight:800;border-radius:999px;padding:16px 40px;cursor:pointer">▶ &nbsp;Écouter en français</button>
+  </div>
   <p style="font-size:12px">Fictional demonstration data · Simulation only — no real transaction</p>
 </div>
 
 <main id="stage" aria-live="off">
 
-  <section class="scene" data-audio="audio/s1.mp3" data-dur="16">
+  <section class="scene" data-scene="s1" data-dur-en="15" data-dur-fr="16">
     <div class="keylogo"><svg viewBox="0 0 74 60" width="126" height="102" aria-hidden="true"><defs><linearGradient id="lg2" gradientUnits="userSpaceOnUse" x1="8" y1="6" x2="60" y2="58"><stop offset="0" stop-color="#fde68a"/><stop offset="0.45" stop-color="#eab308"/><stop offset="1" stop-color="#996207"/></linearGradient></defs><g fill="none" stroke="#7c4a03" stroke-width="9" stroke-linecap="round" opacity="0.25" transform="translate(0,1.8)"><path d="M 42.4 15.6 A 19 19 0 1 0 42.4 44.4"/><path d="M 44 30 H 68"/><path d="M 55.5 30 V 39"/><path d="M 66 30 V 45"/></g><g fill="none" stroke="url(#lg2)" stroke-width="9" stroke-linecap="round"><path d="M 42.4 15.6 A 19 19 0 1 0 42.4 44.4"/><path d="M 44 30 H 68"/><path d="M 55.5 30 V 39"/><path d="M 66 30 V 45"/></g><path d="M 36 7.6 A 20.5 20.5 0 0 0 13 17.4" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2.8" stroke-linecap="round"/></svg><span class="word" style="font-size:84px">lé<span style="color:#eab308">.</span></span></div>
-    <h2 class="serif">One trusted platform for Quebec real estate.</h2>
-    <div class="tiles"><span class="chip">Professionals</span><span class="chip">Properties</span><span class="chip">Businesses</span><span class="chip">Capital</span></div>
+    <h2 class="serif" data-fr="Une seule plateforme de confiance pour l'immobilier québécois.">One trusted platform for Quebec real estate.</h2>
+    <div class="tiles"><span class="chip" data-fr=">Professionnels<">Professionals</span><span class="chip" data-fr=">Propriétés<">Properties</span><span class="chip" data-fr=">Entreprises<">Businesses</span><span class="chip">Capital</span></div>
   </section>
 
-  <section class="scene" data-audio="audio/s2.mp3" data-dur="17">
-    <span class="kick">The problem</span>
-    <h2 class="serif">Three locked doors. One key.</h2>
+  <section class="scene" data-scene="s2" data-dur-en="17" data-dur-fr="20">
+    <span class="kick" data-fr="Le problème">The problem</span>
+    <h2 class="serif" data-fr="Trois portes verrouillées. Une seule clé.">Three locked doors. One key.</h2>
     <div class="tiles">
-      <div class="tile card"><div class="big">$24,600</div><div class="lbl">commission on a median sale</div></div>
-      <div class="tile card"><div class="big">$622,500</div><div class="lbl">Montréal median, still climbing</div></div>
-      <div class="tile card"><div class="big">Locked out</div><div class="lbl">everyday investors</div></div>
+      <div class="tile card"><div class="big">$24,600</div><div class="lbl" data-fr="de commission par vente médiane">commission on a median sale</div></div>
+      <div class="tile card"><div class="big">$622,500</div><div class="lbl" data-fr="prix médian montréalais, en hausse">Montréal median, still climbing</div></div>
+      <div class="tile card"><div class="big" data-fr=">Exclus<">Locked out</div><div class="lbl" data-fr=">investisseurs ordinaires exclus<">everyday investors</div></div>
     </div>
     <div class="locks">🔒 🔒 🔒 → 🔑</div>
   </section>
 
-  <section class="scene" data-audio="audio/s3.mp3" data-dur="18">
-    <span class="kick">Marketplace</span>
+  <section class="scene" data-scene="s3" data-dur-en="17" data-dur-fr="17">
+    <span class="kick" data-fr=">Marché<">Marketplace</span>
     <div class="browser">
       <div class="bbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
       <div class="bbody">
@@ -137,60 +140,60 @@
     </div>
   </section>
 
-  <section class="scene" data-audio="audio/s4.mp3" data-dur="16">
-    <span class="kick">Confidential businesses</span>
+  <section class="scene" data-scene="s4" data-dur-en="15" data-dur-fr="17">
+    <span class="kick" data-fr="Entreprises confidentielles">Confidential businesses</span>
     <div class="card lockcard unlock">
       <div style="font-size:34px">🔐</div>
       <h2 class="serif" style="font-size:22px">Restaurant établi — Plateau</h2>
       <p class="lbl" style="margin:6px 0">Revenue $980K · SDE $165K</p>
       <div class="sigline"></div>
-      <p style="margin:8px 0 0"><span class="lbl">Revealed after NDA:</span><br><strong class="blurname" style="font-size:20px">Bistro Le Sarrasin (fictif)</strong></p>
-      <p class="lbl" style="margin-top:8px">Every access logged</p>
+      <p style="margin:8px 0 0"><span class="lbl" data-fr="Révélé après l’entente :">Revealed after NDA:</span><br><strong class="blurname" style="font-size:20px">Bistro Le Sarrasin (fictif)</strong></p>
+      <p class="lbl" style="margin-top:8px" data-fr="Chaque accès journalisé">Every access logged</p>
     </div>
   </section>
 
-  <section class="scene" data-audio="audio/s5.mp3" data-dur="15">
-    <span class="kick">Projects &amp; Teams</span>
-    <h2 class="serif">From network to deal flow.</h2>
+  <section class="scene" data-scene="s5" data-dur-en="14" data-dur-fr="15">
+    <span class="kick" data-fr="Projets &amp; Équipes">Projects &amp; Teams</span>
+    <h2 class="serif" data-fr="Du réseau au flux d’affaires.">From network to deal flow.</h2>
     <div class="tiles"><span class="chip">🏗 Architecte</span><span class="chip">⚙️ Ingénieure</span><span class="chip">🔨 Entrepreneur</span><span class="chip">💼 Lead investor seat</span></div>
     <div class="thermo" role="img" aria-label="Non-binding intentions: 28% of target"><div></div></div>
-    <p class="lbl">Non-binding intentions · live thermometer</p>
+    <p class="lbl" data-fr="Intentions non contraignantes · thermomètre en direct">Non-binding intentions · live thermometer</p>
   </section>
 
-  <section class="scene" data-audio="audio/s6.mp3" data-dur="20">
-    <div class="simband">Simulation — no real transaction</div>
-    <h2 class="serif">The Investor Hub, done right.</h2>
+  <section class="scene" data-scene="s6" data-dur-en="18" data-dur-fr="18">
+    <div class="simband" data-fr="Simulation — aucune transaction réelle">Simulation — no real transaction</div>
+    <h2 class="serif" data-fr="L’Investor Hub, fait comme il faut.">The Investor Hub, done right.</h2>
     <div class="stack" role="img" aria-label="Capital stack: 62% debt, 18% preferred, 20% common"><div class="s-debt"></div><div class="s-pref"></div><div class="s-com"></div></div>
-    <p class="lbl">62% debt · 18% preferred · 20% common — target returns, never guaranteed</p>
+    <p class="lbl" data-fr="62 % dette · 18 % privilégiée · 20 % ordinaire — rendements cibles, jamais garantis">62% debt · 18% preferred · 20% common — target returns, never guaranteed</p>
     <div class="tiles"><span class="chip">🛡 Level 2 identity</span><span class="chip">📋 Simulated KYC</span><span class="chip ok">🗂 Data room unlocked</span></div>
   </section>
 
-  <section class="scene" data-audio="audio/s7.mp3" data-dur="20">
-    <span class="kick">Clé owns the intelligence layer</span>
+  <section class="scene" data-scene="s7" data-dur-en="17" data-dur-fr="21">
+    <span class="kick" data-fr="Clé possède sa couche d’intelligence">Clé owns the intelligence layer</span>
     <div class="typing" id="typebox" aria-hidden="true"></div>
     <div class="flash">⛔ « Rendement garanti » — BLOCKED by guardrails</div>
     <div class="approve">✓ Human reviewed &amp; approved</div>
-    <p class="lbl">GPT or Claude underneath — swappable. Clé stays in charge.</p>
+    <p class="lbl" data-fr="GPT ou Claude en dessous — interchangeables. Clé garde le contrôle.">GPT or Claude underneath — swappable. Clé stays in charge.</p>
   </section>
 
-  <section class="scene" data-audio="audio/s8.mp3" data-dur="20">
-    <span class="kick">Proof, not promises</span>
+  <section class="scene" data-scene="s8" data-dur-en="18" data-dur-fr="21">
+    <span class="kick" data-fr="Des preuves, pas des promesses">Proof, not promises</span>
     <div class="tiles">
-      <div class="tile card"><div class="count" data-n="114">0</div><div class="lbl">unit &amp; component tests</div></div>
-      <div class="tile card"><div class="count" data-n="34">0</div><div class="lbl">end-to-end flows</div></div>
-      <div class="tile card"><div class="count" data-n="2">0</div><div class="lbl">complete languages</div></div>
-      <div class="tile card"><div class="count" data-n="5">0</div><div class="lbl">Quebec legal regimes mapped</div></div>
+      <div class="tile card"><div class="count" data-n="114">0</div><div class="lbl" data-fr="tests unitaires et composants">unit &amp; component tests</div></div>
+      <div class="tile card"><div class="count" data-n="34">0</div><div class="lbl" data-fr="parcours de bout en bout">end-to-end flows</div></div>
+      <div class="tile card"><div class="count" data-n="2">0</div><div class="lbl" data-fr="langues complètes">complete languages</div></div>
+      <div class="tile card"><div class="count" data-n="5">0</div><div class="lbl" data-fr="régimes juridiques québécois couverts">Quebec legal regimes mapped</div></div>
     </div>
     <div class="tiles"><span class="chip">OACIQ</span><span class="chip">Chambre des notaires</span><span class="chip">RBQ</span><span class="chip">AMF</span><span class="chip">Loi 25</span></div>
   </section>
 
-  <section class="scene" data-audio="audio/s9.mp3" data-dur="9">
+  <section class="scene" data-scene="s9" data-dur-en="9" data-dur-fr="11">
     <div class="keylogo"><svg viewBox="0 0 74 60" width="103" height="84" aria-hidden="true"><defs><linearGradient id="lg3" gradientUnits="userSpaceOnUse" x1="8" y1="6" x2="60" y2="58"><stop offset="0" stop-color="#fde68a"/><stop offset="0.45" stop-color="#eab308"/><stop offset="1" stop-color="#996207"/></linearGradient></defs><g fill="none" stroke="#7c4a03" stroke-width="9" stroke-linecap="round" opacity="0.25" transform="translate(0,1.8)"><path d="M 42.4 15.6 A 19 19 0 1 0 42.4 44.4"/><path d="M 44 30 H 68"/><path d="M 55.5 30 V 39"/><path d="M 66 30 V 45"/></g><g fill="none" stroke="url(#lg3)" stroke-width="9" stroke-linecap="round"><path d="M 42.4 15.6 A 19 19 0 1 0 42.4 44.4"/><path d="M 44 30 H 68"/><path d="M 55.5 30 V 39"/><path d="M 66 30 V 45"/></g><path d="M 36 7.6 A 20.5 20.5 0 0 0 13 17.4" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2.8" stroke-linecap="round"/></svg><span class="word" style="font-size:68px">lé<span style="color:#eab308">.</span></span></div>
-    <h2 class="serif">Let's build the trusted network this market deserves.</h2>
+    <h2 class="serif" data-fr="Bâtissons le réseau de confiance que ce marché mérite.">Let's build the trusted network this market deserves.</h2>
     <div class="ctas">
-      <a class="btn btn-gold" href="https://ssocciarelli.github.io/cle-mvp/" target="_blank" rel="noopener">Try the live demo</a>
-      <a class="btn btn-ghost" href="https://ssocciarelli.github.io/cle-demo/Cle-Investor-Business-Plan.pdf" target="_blank" rel="noopener">Business plan (PDF)</a>
-      <a class="btn btn-ghost" href="../">Investor portfolio</a>
+      <a class="btn btn-gold" href="https://ssocciarelli.github.io/cle-mvp/" target="_blank" rel="noopener" data-fr="Essayer la démo en direct">Try the live demo</a>
+      <a class="btn btn-ghost" href="https://ssocciarelli.github.io/cle-demo/Cle-Investor-Business-Plan.pdf" target="_blank" rel="noopener" data-fr="Plan d’affaires (PDF)">Business plan (PDF)</a>
+      <a class="btn btn-ghost" href="../" data-fr="Portfolio investisseurs">Investor portfolio</a>
     </div>
   </section>
 </main>
@@ -200,6 +203,7 @@
 <div id="controls">
   <button id="toggle" aria-label="Pause">⏸</button>
   <button id="restart" aria-label="Restart">↺</button>
+  <button id="langswap" aria-label="Switch language" style="font-weight:800;font-size:13px">FR</button>
   <div id="dots" role="group" aria-label="Scenes"></div>
 </div>
 
@@ -231,10 +235,19 @@
   const capFr = document.getElementById("cap-fr");
   const bar = document.getElementById("bar");
   const toggle = document.getElementById("toggle");
-  let idx = -1, audio = null, playing = false, timer = null;
-  const total = scenes.reduce((s, sc) => s + Number(sc.dataset.dur), 0);
-  const offsets = []; let acc = 0;
-  scenes.forEach((sc) => { offsets.push(acc); acc += Number(sc.dataset.dur); });
+  let idx = -1, audio = null, playing = false, timer = null, lang = "en";
+  const durOf = (sc) => Number(lang === "fr" ? sc.dataset.durFr : sc.dataset.durEn);
+  const srcOf = (sc) => (lang === "fr" ? `audio/fr/${sc.dataset.scene}.mp3` : `audio/${sc.dataset.scene}.m4a`);
+  let total = 0, offsets = [];
+  function recompute(){ total = 0; offsets = []; scenes.forEach((sc) => { offsets.push(total); total += durOf(sc); }); }
+  recompute();
+  function applyLang(l){
+    lang = l; document.documentElement.lang = l; recompute();
+    document.querySelectorAll("[data-fr]").forEach((el) => {
+      if (!el.dataset.en) el.dataset.en = el.textContent;
+      el.textContent = l === "fr" ? el.dataset.fr : el.dataset.en;
+    });
+  }
 
   scenes.forEach((_, i) => {
     const b = document.createElement("button");
@@ -273,13 +286,13 @@
     idx = i;
     scenes.forEach((sc, j) => sc.classList.toggle("active", j === i));
     [...dots.children].forEach((d, j) => d.classList.toggle("on", j <= i));
-    capEn.textContent = CAPS[i][0]; capFr.textContent = CAPS[i][1];
+    capEn.textContent = lang === "fr" ? CAPS[i][1] : CAPS[i][0]; capFr.textContent = lang === "fr" ? CAPS[i][0] : CAPS[i][1];
     bar.style.width = ((offsets[i] / total) * 100) + "%";
     if (audio) { audio.onended = null; audio.pause(); }
     clearTimeout(timer);
     if (i === 6) typeDemo();
     if (i === 7) counters();
-    audio = new Audio(scenes[i].dataset.audio);
+    audio = new Audio(srcOf(scenes[i]));
     const advance = () => go(i + 1);
     audio.onended = advance;
     audio.play().then(() => {
@@ -287,7 +300,7 @@
         if (idx !== i || !playing) { clearInterval(tick); return; }
         bar.style.width = (((offsets[i] + audio.currentTime) / total) * 100) + "%";
       }, 250);
-    }).catch(() => { timer = setTimeout(advance, Number(scenes[i].dataset.dur) * 1000); });
+    }).catch(() => { timer = setTimeout(advance, durOf(scenes[i]) * 1000); });
     playing = true; toggle.textContent = "⏸"; toggle.setAttribute("aria-label","Pause");
     if (manual && audio.paused === false) { /* noop */ }
   }
@@ -298,10 +311,18 @@
     else { audio.play().catch(()=>{}); playing = true; toggle.textContent = "⏸"; toggle.setAttribute("aria-label","Pause"); }
   });
   document.getElementById("restart").addEventListener("click", () => go(0, true));
-  document.getElementById("play").addEventListener("click", () => {
-    document.getElementById("overlay").style.display = "none";
-    go(0, true);
+  document.getElementById("langswap").addEventListener("click", () => {
+    applyLang(lang === "fr" ? "en" : "fr");
+    document.getElementById("langswap").textContent = lang === "fr" ? "EN" : "FR";
+    go(Math.max(0, idx), true);
   });
+  for (const id of ["play", "play-fr"]) {
+    document.getElementById(id).addEventListener("click", (e) => {
+      applyLang(e.currentTarget.dataset.lang);
+      document.getElementById("overlay").style.display = "none";
+      go(0, true);
+    });
+  }
 })();
 </script>
 </body>
