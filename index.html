@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Clé — investor portfolio: animated presentation, live demos, business plan, pitch deck, legal grounding.">
+<meta property="og:title" content="Clé — Investor portfolio">
+<meta property="og:description" content="Everything in one place: 2-min voiced presentation, live MVP, feature prototype, business plan and deck.">
+<meta property="og:url" content="https://ssocciarelli.github.io/cle-portfolio/">
+<meta property="og:image" content="https://ssocciarelli.github.io/cle-demo/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74 60'%3E%3Cg fill='none' stroke='%23eab308' stroke-width='10' stroke-linecap='round'%3E%3Cpath d='M 42.4 15.6 A 19 19 0 1 0 42.4 44.4'/%3E%3Cpath d='M 44 30 H 68'/%3E%3Cpath d='M 55.5 30 V 39'/%3E%3Cpath d='M 66 30 V 45'/%3E%3C/g%3E%3C/svg%3E">
+<title>Clé — Investor portfolio</title>
+<style>
+  :root{--ink:#1c1917;--muted:#78716c;--faint:#a8a29e;--line:#e7e5e4;--paper:#faf9f7;--green:#065f46;--green2:#047857;--gsoft:#ecfdf5;--gold:#b45309;--goldl:#eab308;--navy:#1f2c4d}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+  .serif{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.01em}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  header.hero{background:linear-gradient(150deg,#04352a 0%,#065f46 62%,#0a7a5a 100%);color:#f5f4f1;padding:64px 0 56px}
+  .logo{display:flex;align-items:flex-end}
+  .word{font-weight:800;letter-spacing:-.04em;font-size:56px;line-height:1;color:#fafaf9;margin-left:-.34em}
+  h1{font-size:clamp(30px,5vw,52px);line-height:1.1;margin:18px 0 10px}
+  .lead{color:#d6d3d1;max-width:640px;font-size:18px;margin:0}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .btn{display:inline-flex;align-items:center;gap:9px;border-radius:12px;padding:14px 22px;font-weight:700;text-decoration:none;font-size:15px;border:1px solid transparent}
+  .btn-gold{background:var(--goldl);color:#211a02}
+  .btn-ghost{border-color:rgba(255,255,255,.35);color:#f5f4f1}
+  .btn-line{border-color:#d6d3d1;color:var(--ink);background:#fff}
+  .kick{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  section{padding:52px 0}
+  h2{font-size:clamp(24px,3.4vw,36px);margin:6px 0 14px}
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .g4{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .num{font-family:Georgia,serif;font-size:34px;color:var(--green)}
+  .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+  .s{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+  .shots{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .shots figure{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+  .shots img{width:100%;height:auto;display:block}
+  .shots figcaption{padding:10px 14px;font-size:13px;color:var(--muted)}
+  .doc{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;text-decoration:none;color:var(--ink)}
+  .doc:hover{border-color:var(--green2)}
+  .doc b{font-size:15px}
+  .doc span{font-size:12.5px;color:var(--muted)}
+  .arrow{color:var(--green2);font-weight:800}
+  .chip{display:inline-block;border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 14px;font-size:13px;color:#44403c;margin:3px 6px 3px 0}
+  .band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .callout{border-left:3px solid var(--green);background:var(--gsoft);border-radius:0 12px 12px 0;padding:16px 20px;font-size:14.5px}
+  footer{padding:34px 0 48px;font-size:12px;color:var(--faint);line-height:1.6}
+  a{color:var(--green2)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="logo">
+      <svg viewBox="0 0 74 60" width="85" height="69" aria-hidden="true"><defs><linearGradient id="lg1" gradientUnits="userSpaceOnUse" x1="8" y1="6" x2="60" y2="58"><stop offset="0" stop-color="#fde68a"/><stop offset="0.45" stop-color="#eab308"/><stop offset="1" stop-color="#996207"/></linearGradient></defs><g fill="none" stroke="#7c4a03" stroke-width="9" stroke-linecap="round" opacity="0.25" transform="translate(0,1.8)"><path d="M 42.4 15.6 A 19 19 0 1 0 42.4 44.4"/><path d="M 44 30 H 68"/><path d="M 55.5 30 V 39"/><path d="M 66 30 V 45"/></g><g fill="none" stroke="url(#lg1)" stroke-width="9" stroke-linecap="round"><path d="M 42.4 15.6 A 19 19 0 1 0 42.4 44.4"/><path d="M 44 30 H 68"/><path d="M 55.5 30 V 39"/><path d="M 66 30 V 45"/></g><path d="M 36 7.6 A 20.5 20.5 0 0 0 13 17.4" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2.8" stroke-linecap="round"/></svg>
+      <span class="word">lé<span style="color:#eab308">.</span></span>
+    </div>
+    <h1 class="serif">The key to Quebec real estate —<br>everything investors need, in one place.</h1>
+    <p class="lead">Sell without excess friction · buy together · invest from small tickets — one verified, bilingual, compliance-first platform. Built, tested and live today on fictional demonstration data.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="presentation/">▶ Watch the 2-minute presentation</a>
+      <a class="btn btn-ghost" href="https://ssocciarelli.github.io/cle-mvp/" target="_blank" rel="noopener">Try the live MVP</a>
+      <a class="btn btn-ghost" href="https://ssocciarelli.github.io/cle-demo/" target="_blank" rel="noopener">Feature prototype</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <span class="kick">Why now</span>
+    <h2 class="serif">A market paying billions for friction.</h2>
+    <div class="grid g4">
+      <div class="card"><div class="num">$2.1B</div><div class="lbl">yearly Quebec commission pool</div><div class="s">≈ 5% on ~97,000 residential sales — value waiting to be redistributed.</div></div>
+      <div class="card"><div class="num">15–20%</div><div class="lbl">already sell broker-free</div><div class="s">Quebec is Canada's most commission-skeptical market.</div></div>
+      <div class="card"><div class="num">$622K</div><div class="lbl">Montréal median price</div><div class="s">Buying alone is out of reach; buying together lacks tooling.</div></div>
+      <div class="card"><div class="num">$3.3B</div><div class="lbl">US retail real-estate AUM (Fundrise)</div><div class="s">Canada's consumer channel is still nearly empty.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <span class="kick">What exists today</span>
+    <h2 class="serif">Two working products, one thesis.</h2>
+    <div class="grid g2">
+      <div class="card">
+        <b>The MVP — production-shaped</b>
+        <div class="s">French-first, fully bilingual. Network + directory with an enriched professional profile (licences in real Quebec formats), compliant property marketplace, NDA-gated business files, Projects &amp; Teams with non-binding intent tracking, a fully simulated Investor Hub, deal rooms, quotes &amp; consultations, Law-25-oriented privacy controls — plus a guided tour and a provider-swappable <b>AI layer</b> with human review and compliance guardrails.</div>
+        <div style="margin-top:12px"><a href="https://ssocciarelli.github.io/cle-mvp/" target="_blank" rel="noopener">ssocciarelli.github.io/cle-mvp →</a></div>
+      </div>
+      <div class="card">
+        <b>The prototype — the product vision</b>
+        <div class="s">The feature showcase that maps the roadmap: no-commission selling packages, buy-together consortiums, eBay-style property auctions on verified Civil-Code mechanics, regime-aware crowdfunding (45-110 / OM / accredited), AI photo assessments, Canadian stress-test BuyAbility and a market-evolution dashboard.</div>
+        <div style="margin-top:12px"><a href="https://ssocciarelli.github.io/cle-demo/" target="_blank" rel="noopener">ssocciarelli.github.io/cle-demo →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kick">See it</span>
+    <h2 class="serif">The product, at a glance.</h2>
+    <div class="shots">
+      <figure><img src="shots/landing-1280.png" alt="Clé landing page in French" loading="lazy" width="1280" height="900"><figcaption>French-first landing with guided tour</figcaption></figure>
+      <figure><img src="shots/marketplace-1280.png" alt="Property marketplace with filters and map panel" loading="lazy" width="1280" height="900"><figcaption>Marketplace — filters, sorting, accessible map panel</figcaption></figure>
+      <figure><img src="shots/property-detail-1280.png" alt="Compliant property listing with mortgage calculator" loading="lazy" width="1280" height="900"><figcaption>Compliant listing — disclosures, licence, Canadian mortgage math</figcaption></figure>
+      <figure><img src="shots/investor-hub-1280.png" alt="Simulated investor hub with offerings" loading="lazy" width="1280" height="900"><figcaption>Investor Hub — fully simulated, and it says so</figcaption></figure>
+      <figure><img src="shots/project-1280.png" alt="Project page with team, milestones and interest thermometer" loading="lazy" width="1280" height="900"><figcaption>Projects &amp; Teams — roles, milestones, non-binding intent</figcaption></figure>
+      <figure><img src="shots/deal-room-1280.png" alt="Deal room with checklist, documents and messaging" loading="lazy" width="1280" height="900"><figcaption>Deal rooms — checklist, six-status documents, messaging</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <span class="kick">Engineering &amp; compliance posture</span>
+    <h2 class="serif">Proof, not promises.</h2>
+    <div class="grid g4">
+      <div class="card"><div class="num">114</div><div class="lbl">unit &amp; component tests</div></div>
+      <div class="card"><div class="num">34</div><div class="lbl">end-to-end flows, 2 devices</div></div>
+      <div class="card"><div class="num">0</div><div class="lbl">serious axe a11y violations</div></div>
+      <div class="card"><div class="num">100%</div><div class="lbl">AI eval gold-set accuracy</div></div>
+    </div>
+    <div style="margin-top:16px">
+      <span class="chip">OACIQ</span><span class="chip">Chambre des notaires</span><span class="chip">RBQ</span><span class="chip">AMF</span><span class="chip">Loi 25</span>
+      <span class="chip">FR default · EN complete</span><span class="chip">WCAG-minded</span><span class="chip">AI guardrails + human review</span>
+    </div>
+    <p class="callout" style="margin-top:18px">Every regulated function — investing, KYC, signatures, payments — is <b>simulated and labeled</b>. The product demonstrates the compliant blueprint; a regulated launch partner activates it. <a href="https://ssocciarelli.github.io/cle-mvp/legal" target="_blank" rel="noopener">See the legal-framework page →</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kick">Documents</span>
+    <h2 class="serif">Read the full story.</h2>
+    <div class="grid g2">
+      <a class="doc" href="https://ssocciarelli.github.io/cle-demo/Cle-Investor-Business-Plan.pdf" target="_blank" rel="noopener"><span><b>Investor business plan</b><br><span>12 sections · 5-year model · PDF</span></span><span class="arrow">↗</span></a>
+      <a class="doc" href="https://ssocciarelli.github.io/cle-demo/Cle-Pitch-Deck.pdf" target="_blank" rel="noopener"><span><b>Pitch deck</b><br><span>14 slides · PDF</span></span><span class="arrow">↗</span></a>
+      <a class="doc" href="https://ssocciarelli.github.io/cle-demo/business-plan.html" target="_blank" rel="noopener"><span><b>Business plan — web version</b><br><span>Readable online</span></span><span class="arrow">↗</span></a>
+      <a class="doc" href="https://ssocciarelli.github.io/cle-demo/deck.html" target="_blank" rel="noopener"><span><b>Pitch deck — web version</b><br><span>Arrow keys to navigate</span></span><span class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <span class="kick">The ask</span>
+    <h2 class="serif">Seed round — $3.5M.</h2>
+    <p style="max-width:640px">18–24 months of runway to launch owner-direct selling in Greater Montréal, secure the regulated investing partnership, and reach EBITDA-visible scale. Detailed use of funds in the business plan.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="presentation/">▶ Watch the presentation</a>
+      <a class="btn btn-line" href="https://ssocciarelli.github.io/cle-mvp/" target="_blank" rel="noopener">Open the live demo</a>
+    </div>
+    <p class="s" style="margin-top:14px">Team &amp; contact — to be announced.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Demonstration prototype. Investment features are illustrative only and do not constitute an offering of securities. Investment intentions are non-binding. No payment or real transaction is processed by these applications. Any real offering would require an AMF-compliant structure and applicable legal review. All people, firms and figures are fictional. · Prototype de démonstration — toutes les personnes, entreprises et données sont fictives.
+  </div>
+</footer>
+</body>
+</html>

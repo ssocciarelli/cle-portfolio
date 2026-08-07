@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Clé — 2-minute animated presentation with voice-over. The key to Quebec real estate.">
+<meta property="og:title" content="Clé — Animated presentation (2 min)">
+<meta property="og:description" content="Sit back: motion graphics + voice-over explaining the Clé platform. No clicking required.">
+<meta property="og:url" content="https://ssocciarelli.github.io/cle-portfolio/presentation/">
+<meta property="og:image" content="https://ssocciarelli.github.io/cle-demo/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74 60'%3E%3Cg fill='none' stroke='%23eab308' stroke-width='10' stroke-linecap='round'%3E%3Cpath d='M 42.4 15.6 A 19 19 0 1 0 42.4 44.4'/%3E%3Cpath d='M 44 30 H 68'/%3E%3Cpath d='M 55.5 30 V 39'/%3E%3Cpath d='M 66 30 V 45'/%3E%3C/g%3E%3C/svg%3E">
+<title>Clé — Animated presentation (2 min)</title>
+<style>
+  :root{--ink:#f5f4f1;--muted:#c8c4bd;--gold:#eab308;--goldl:#fcd34d;--em:#34d399;--red:#f87171;--card:rgba(255,255,255,.07);--line:rgba(255,255,255,.16)}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);
+    background:radial-gradient(120% 120% at 20% 0%,#0a5a44 0%,#04352a 45%,#02231c 100%);display:flex;flex-direction:column;min-height:100vh}
+  .serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+  #stage{position:relative;flex:1;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:24px}
+  .scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+    opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;pointer-events:none;padding:24px}
+  .scene.active{opacity:1;transform:none;pointer-events:auto}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;backdrop-filter:blur(4px)}
+  .kick{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--goldl)}
+  h2{font-size:clamp(22px,3.6vw,38px);margin:0;text-align:center}
+  .tiles{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .tile{min-width:170px;text-align:center;opacity:0;transform:scale(.85)}
+  .active .tile{animation:pop .5s ease forwards}
+  .active .tile:nth-child(2){animation-delay:.35s}.active .tile:nth-child(3){animation-delay:.7s}.active .tile:nth-child(4){animation-delay:1.05s}
+  @keyframes pop{to{opacity:1;transform:scale(1)}}
+  .big{font-family:Georgia,serif;font-size:clamp(26px,4.2vw,44px);color:#fff}
+  .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+  .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px;background:rgba(255,255,255,.05);opacity:0;transform:translateX(-12px)}
+  .active .chip{animation:slide .45s ease forwards}
+  .active .chip:nth-of-type(2){animation-delay:.4s}.active .chip:nth-of-type(3){animation-delay:.8s}.active .chip:nth-of-type(4){animation-delay:1.2s}.active .chip:nth-of-type(5){animation-delay:1.6s}
+  @keyframes slide{to{opacity:1;transform:none}}
+  .ok{color:var(--em)}.warn{color:var(--goldl)}
+  .browser{width:min(560px,92vw);border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#faf9f7;color:#1c1917;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+  .bbar{display:flex;gap:6px;padding:10px 12px;background:#e7e5e4}
+  .dot{width:10px;height:10px;border-radius:50%;background:#c7c2ba}
+  .bbody{padding:16px 18px}
+  .ph{height:110px;border-radius:10px;background:linear-gradient(150deg,#1f2c4d,#3b4a73);position:relative;overflow:hidden}
+  .ph::after{content:"";position:absolute;inset:auto 16% 0 16%;top:45%;background:linear-gradient(180deg,rgba(255,255,255,.35),transparent);border-radius:8px 8px 0 0}
+  .price{font-family:Georgia,serif;font-size:26px;margin:10px 0 2px}
+  .badges .chip{color:#065f46;border-color:#a7f3d0;background:#ecfdf5;font-weight:600}
+  .lockcard{width:min(430px,90vw);text-align:center}
+  .locks{font-size:44px;letter-spacing:18px}
+  .blurname{filter:blur(7px);transition:filter 1.2s ease .6s}
+  .active .unlock .blurname{filter:blur(0)}
+  .sigline{height:2px;background:var(--goldl);width:0;margin:10px auto}
+  .active .sigline{animation:sig 1.4s ease .4s forwards}
+  @keyframes sig{to{width:70%}}
+  .thermo{width:min(420px,86vw);height:16px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden}
+  .thermo>div{height:100%;width:0;background:var(--em);border-radius:999px}
+  .active .thermo>div{animation:fill 2.2s ease .5s forwards}
+  @keyframes fill{to{width:28%}}
+  .stack{display:flex;width:min(460px,88vw);height:22px;border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+  .stack>div{width:0}
+  .s-debt{background:#93a4c9}.s-pref{background:var(--em)}.s-com{background:var(--gold)}
+  .active .s-debt{animation:g1 1.4s ease .3s forwards}.active .s-pref{animation:g2 1.4s ease .9s forwards}.active .s-com{animation:g3 1.4s ease 1.5s forwards}
+  @keyframes g1{to{width:62%}}@keyframes g2{to{width:18%}}@keyframes g3{to{width:20%}}
+  .simband{background:#78350f;color:var(--goldl);border:1px solid var(--goldl);font-weight:800;letter-spacing:.14em;font-size:12px;padding:8px 16px;border-radius:10px;text-transform:uppercase}
+  .typing{font-family:ui-monospace,Menlo,monospace;font-size:14px;color:#1c1917;background:#fff;border-radius:10px;padding:12px 14px;min-height:64px;width:min(520px,90vw);text-align:left;white-space:pre-wrap}
+  .flash{border:2px solid var(--red);color:#b91c1c;background:#fef2f2;font-weight:700;border-radius:10px;padding:8px 14px;opacity:0}
+  .active .flash{animation:blink .5s ease 6s 3}
+  @keyframes blink{0%,100%{opacity:0}50%{opacity:1}}
+  .approve{opacity:0;color:var(--em);font-weight:800}
+  .active .approve{animation:pop .5s ease 9.5s forwards}
+  .count{font-family:Georgia,serif;font-size:clamp(30px,5vw,52px)}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:13px 22px;font-weight:700;text-decoration:none;font-size:15px}
+  .btn-gold{background:var(--gold);color:#211a02}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink)}
+  #caption{min-height:86px;padding:10px 22px 6px;text-align:center;max-width:900px;margin:0 auto}
+  #cap-en{font-size:clamp(15px,2vw,19px);margin:0}
+  #cap-fr{font-size:13px;color:var(--goldl);margin:6px 0 0;font-style:italic}
+  #controls{display:flex;align-items:center;gap:14px;justify-content:center;padding:12px 16px 20px;flex-wrap:wrap}
+  #controls button{background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:10px;min-height:42px;min-width:42px;font-size:15px;cursor:pointer}
+  #dots{display:flex;gap:7px}
+  #dots button{width:26px;height:8px;min-height:8px;border-radius:999px;padding:0;border:none;background:rgba(255,255,255,.2)}
+  #dots button.on{background:var(--gold)}
+  #bar{position:fixed;top:0;left:0;height:3px;background:var(--gold);width:0;transition:width .3s linear;z-index:5}
+  #overlay{position:fixed;inset:0;background:rgba(2,35,28,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;z-index:10;text-align:center;padding:24px}
+  #overlay p{color:var(--muted);max-width:420px;margin:0}
+  #play{background:var(--gold);border:none;color:#211a02;font-size:19px;font-weight:800;border-radius:999px;padding:18px 42px;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
+  .keylogo{display:flex;align-items:flex-end;justify-content:center}
+  .keylogo svg path{stroke-dasharray:140;stroke-dashoffset:140}
+  .active .keylogo svg path,#overlay .keylogo svg path{animation:draw 1.6s ease forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .word{font-weight:800;letter-spacing:-.04em;font-size:64px;line-height:1;margin-left:-.34em}
+  @media (prefers-reduced-motion: reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<div id="overlay">
+  <div class="keylogo">
+    <svg viewBox="0 0 74 60" width="97" height="79" aria-hidden="true"><defs><linearGradient id="lg1" gradientUnits="userSpaceOnUse" x1="8" y1="6" x2="60" y2="58"><stop offset="0" stop-color="#fde68a"/><stop offset="0.45" stop-color="#eab308"/><stop offset="1" stop-color="#996207"/></linearGradient></defs><g fill="none" stroke="#7c4a03" stroke-width="9" stroke-linecap="round" opacity="0.25" transform="translate(0,1.8)"><path d="M 42.4 15.6 A 19 19 0 1 0 42.4 44.4"/><path d="M 44 30 H 68"/><path d="M 55.5 30 V 39"/><path d="M 66 30 V 45"/></g><g fill="none" stroke="url(#lg1)" stroke-width="9" stroke-linecap="round"><path d="M 42.4 15.6 A 19 19 0 1 0 42.4 44.4"/><path d="M 44 30 H 68"/><path d="M 55.5 30 V 39"/><path d="M 66 30 V 45"/></g><path d="M 36 7.6 A 20.5 20.5 0 0 0 13 17.4" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2.8" stroke-linecap="round"/></svg>
+    <span class="word">lé<span style="color:#eab308">.</span></span>
+  </div>
+  <h1 class="serif" style="font-size:clamp(24px,4vw,40px);margin:0">The key to Quebec real estate</h1>
+  <p>A 2-minute animated presentation with voice-over. Sit back — no clicking needed. Audio on. 🎧</p>
+  <button id="play">▶ &nbsp;Play the presentation</button>
+  <p style="font-size:12px">Fictional demonstration data · Simulation only — no real transaction</p>
+</div>
+
+<main id="stage" aria-live="off">
+
+  <section class="scene" data-audio="audio/s1.m4a" data-dur="14">
+    <div class="keylogo"><svg viewBox="0 0 74 60" width="126" height="102" aria-hidden="true"><defs><linearGradient id="lg2" gradientUnits="userSpaceOnUse" x1="8" y1="6" x2="60" y2="58"><stop offset="0" stop-color="#fde68a"/><stop offset="0.45" stop-color="#eab308"/><stop offset="1" stop-color="#996207"/></linearGradient></defs><g fill="none" stroke="#7c4a03" stroke-width="9" stroke-linecap="round" opacity="0.25" transform="translate(0,1.8)"><path d="M 42.4 15.6 A 19 19 0 1 0 42.4 44.4"/><path d="M 44 30 H 68"/><path d="M 55.5 30 V 39"/><path d="M 66 30 V 45"/></g><g fill="none" stroke="url(#lg2)" stroke-width="9" stroke-linecap="round"><path d="M 42.4 15.6 A 19 19 0 1 0 42.4 44.4"/><path d="M 44 30 H 68"/><path d="M 55.5 30 V 39"/><path d="M 66 30 V 45"/></g><path d="M 36 7.6 A 20.5 20.5 0 0 0 13 17.4" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2.8" stroke-linecap="round"/></svg><span class="word" style="font-size:84px">lé<span style="color:#eab308">.</span></span></div>
+    <h2 class="serif">One trusted platform for Quebec real estate.</h2>
+    <div class="tiles"><span class="chip">Professionals</span><span class="chip">Properties</span><span class="chip">Businesses</span><span class="chip">Capital</span></div>
+  </section>
+
+  <section class="scene" data-audio="audio/s2.m4a" data-dur="14">
+    <span class="kick">The problem</span>
+    <h2 class="serif">Three locked doors. One key.</h2>
+    <div class="tiles">
+      <div class="tile card"><div class="big">$24,600</div><div class="lbl">commission on a median sale</div></div>
+      <div class="tile card"><div class="big">$622,500</div><div class="lbl">Montréal median, still climbing</div></div>
+      <div class="tile card"><div class="big">Locked out</div><div class="lbl">everyday investors</div></div>
+    </div>
+    <div class="locks">🔒 🔒 🔒 → 🔑</div>
+  </section>
+
+  <section class="scene" data-audio="audio/s3.m4a" data-dur="17">
+    <span class="kick">Marketplace</span>
+    <div class="browser">
+      <div class="bbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="bbody">
+        <div class="ph"></div>
+        <div class="price">1 285 000 $ <span style="font-size:13px;color:#57534e">· Triplex — Plateau-Mont-Royal</span></div>
+        <div class="badges"><span class="chip">✓ Permis OACIQ</span><span class="chip">✓ Divulgations</span><span class="chip">✓ Garantie légale</span><span class="chip">✓ Révision publicitaire</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" data-audio="audio/s4.m4a" data-dur="14">
+    <span class="kick">Confidential businesses</span>
+    <div class="card lockcard unlock">
+      <div style="font-size:34px">🔐</div>
+      <h2 class="serif" style="font-size:22px">Restaurant établi — Plateau</h2>
+      <p class="lbl" style="margin:6px 0">Revenue $980K · SDE $165K</p>
+      <div class="sigline"></div>
+      <p style="margin:8px 0 0"><span class="lbl">Revealed after NDA:</span><br><strong class="blurname" style="font-size:20px">Bistro Le Sarrasin (fictif)</strong></p>
+      <p class="lbl" style="margin-top:8px">Every access logged</p>
+    </div>
+  </section>
+
+  <section class="scene" data-audio="audio/s5.m4a" data-dur="14">
+    <span class="kick">Projects &amp; Teams</span>
+    <h2 class="serif">From network to deal flow.</h2>
+    <div class="tiles"><span class="chip">🏗 Architecte</span><span class="chip">⚙️ Ingénieure</span><span class="chip">🔨 Entrepreneur</span><span class="chip">💼 Lead investor seat</span></div>
+    <div class="thermo" role="img" aria-label="Non-binding intentions: 28% of target"><div></div></div>
+    <p class="lbl">Non-binding intentions · live thermometer</p>
+  </section>
+
+  <section class="scene" data-audio="audio/s6.m4a" data-dur="15">
+    <div class="simband">Simulation — no real transaction</div>
+    <h2 class="serif">The Investor Hub, done right.</h2>
+    <div class="stack" role="img" aria-label="Capital stack: 62% debt, 18% preferred, 20% common"><div class="s-debt"></div><div class="s-pref"></div><div class="s-com"></div></div>
+    <p class="lbl">62% debt · 18% preferred · 20% common — target returns, never guaranteed</p>
+    <div class="tiles"><span class="chip">🛡 Level 2 identity</span><span class="chip">📋 Simulated KYC</span><span class="chip ok">🗂 Data room unlocked</span></div>
+  </section>
+
+  <section class="scene" data-audio="audio/s7.m4a" data-dur="16">
+    <span class="kick">Clé owns the intelligence layer</span>
+    <div class="typing" id="typebox" aria-hidden="true"></div>
+    <div class="flash">⛔ « Rendement garanti » — BLOCKED by guardrails</div>
+    <div class="approve">✓ Human reviewed &amp; approved</div>
+    <p class="lbl">GPT or Claude underneath — swappable. Clé stays in charge.</p>
+  </section>
+
+  <section class="scene" data-audio="audio/s8.m4a" data-dur="18">
+    <span class="kick">Proof, not promises</span>
+    <div class="tiles">
+      <div class="tile card"><div class="count" data-n="114">0</div><div class="lbl">unit &amp; component tests</div></div>
+      <div class="tile card"><div class="count" data-n="34">0</div><div class="lbl">end-to-end flows</div></div>
+      <div class="tile card"><div class="count" data-n="2">0</div><div class="lbl">complete languages</div></div>
+      <div class="tile card"><div class="count" data-n="5">0</div><div class="lbl">Quebec legal regimes mapped</div></div>
+    </div>
+    <div class="tiles"><span class="chip">OACIQ</span><span class="chip">Chambre des notaires</span><span class="chip">RBQ</span><span class="chip">AMF</span><span class="chip">Loi 25</span></div>
+  </section>
+
+  <section class="scene" data-audio="audio/s9.m4a" data-dur="8">
+    <div class="keylogo"><svg viewBox="0 0 74 60" width="103" height="84" aria-hidden="true"><defs><linearGradient id="lg3" gradientUnits="userSpaceOnUse" x1="8" y1="6" x2="60" y2="58"><stop offset="0" stop-color="#fde68a"/><stop offset="0.45" stop-color="#eab308"/><stop offset="1" stop-color="#996207"/></linearGradient></defs><g fill="none" stroke="#7c4a03" stroke-width="9" stroke-linecap="round" opacity="0.25" transform="translate(0,1.8)"><path d="M 42.4 15.6 A 19 19 0 1 0 42.4 44.4"/><path d="M 44 30 H 68"/><path d="M 55.5 30 V 39"/><path d="M 66 30 V 45"/></g><g fill="none" stroke="url(#lg3)" stroke-width="9" stroke-linecap="round"><path d="M 42.4 15.6 A 19 19 0 1 0 42.4 44.4"/><path d="M 44 30 H 68"/><path d="M 55.5 30 V 39"/><path d="M 66 30 V 45"/></g><path d="M 36 7.6 A 20.5 20.5 0 0 0 13 17.4" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2.8" stroke-linecap="round"/></svg><span class="word" style="font-size:68px">lé<span style="color:#eab308">.</span></span></div>
+    <h2 class="serif">Let's build the trusted network this market deserves.</h2>
+    <div class="ctas">
+      <a class="btn btn-gold" href="https://ssocciarelli.github.io/cle-mvp/" target="_blank" rel="noopener">Try the live demo</a>
+      <a class="btn btn-ghost" href="https://ssocciarelli.github.io/cle-demo/Cle-Investor-Business-Plan.pdf" target="_blank" rel="noopener">Business plan (PDF)</a>
+      <a class="btn btn-ghost" href="../">Investor portfolio</a>
+    </div>
+  </section>
+</main>
+
+<div id="caption" aria-live="polite"><p id="cap-en"></p><p id="cap-fr"></p></div>
+
+<div id="controls">
+  <button id="toggle" aria-label="Pause">⏸</button>
+  <button id="restart" aria-label="Restart">↺</button>
+  <div id="dots" role="group" aria-label="Scenes"></div>
+</div>
+
+<script>
+(function(){
+  const CAPS = [
+    ["A working product on fictional demonstration data — professionals, properties, businesses and capital, together.",
+     "Un produit fonctionnel sur données fictives — professionnels, propriétés, entreprises et capital, réunis."],
+    ["≈ $24,600 of commission per median sale · a climbing median price · investors locked out.",
+     "≈ 24 600 $ de commission par vente médiane · un prix médian qui grimpe · des investisseurs sans porte d'entrée."],
+    ["Every listing carries licence, disclosures, legal warranty and an advertising-review status.",
+     "Chaque inscription porte permis, divulgations, garantie légale et statut de révision publicitaire."],
+    ["Anonymous until the NDA is signed (simulated) — with a complete access log.",
+     "Anonyme jusqu'à l'entente de confidentialité (simulée) — avec journal d'accès complet."],
+    ["Founders recruit the team and gather NON-binding intentions, tracked live.",
+     "Les porteurs recrutent l'équipe et recueillent des intentions NON contraignantes, suivies en direct."],
+    ["Fully simulated — capital stack, fees, risks, and a gated data room. The compliant blueprint.",
+     "Entièrement simulé — structure de capital, frais, risques, salle de documents gardée. Le plan conforme."],
+    ["AI drafts, summarizes, searches and reviews — guardrails block forbidden claims, a human approves.",
+     "L'IA rédige, résume, cherche et révise — les garde-fous bloquent l'interdit, l'humain approuve."],
+    ["148+ automated checks per change · French first · grounded in OACIQ, RBQ, AMF and Law 25.",
+     "148+ vérifications automatisées par changement · français d'abord · ancré dans OACIQ, RBQ, AMF et Loi 25."],
+    ["Clé — the key to Quebec real estate.",
+     "Clé — la clé de l'immobilier québécois."],
+  ];
+  const scenes = [...document.querySelectorAll(".scene")];
+  const dots = document.getElementById("dots");
+  const capEn = document.getElementById("cap-en");
+  const capFr = document.getElementById("cap-fr");
+  const bar = document.getElementById("bar");
+  const toggle = document.getElementById("toggle");
+  let idx = -1, audio = null, playing = false, timer = null;
+  const total = scenes.reduce((s, sc) => s + Number(sc.dataset.dur), 0);
+  const offsets = []; let acc = 0;
+  scenes.forEach((sc) => { offsets.push(acc); acc += Number(sc.dataset.dur); });
+
+  scenes.forEach((_, i) => {
+    const b = document.createElement("button");
+    b.setAttribute("aria-label", "Scene " + (i + 1));
+    b.addEventListener("click", () => go(i, true));
+    dots.appendChild(b);
+  });
+
+  function typeDemo(){
+    const box = document.getElementById("typebox");
+    if (!box) return;
+    const text = "Assistant IA — brouillon d'inscription :\\nTriplex rénové au Plateau, revenus stables, toiture 2022…";
+    box.textContent = "";
+    let i = 0;
+    const iv = setInterval(() => {
+      if (idx !== 6) { clearInterval(iv); return; }
+      box.textContent = text.slice(0, i++);
+      if (i > text.length) clearInterval(iv);
+    }, 45);
+  }
+
+  function counters(){
+    document.querySelectorAll(".scene.active .count").forEach((el) => {
+      const target = Number(el.dataset.n); const t0 = performance.now();
+      const step = (t) => {
+        const p = Math.min(1, (t - t0) / 1600);
+        el.textContent = String(Math.round(target * p));
+        if (p < 1 && idx === 7) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+  }
+
+  function go(i, manual){
+    if (i >= scenes.length) { playing = false; toggle.textContent = "▶"; toggle.setAttribute("aria-label","Play"); return; }
+    idx = i;
+    scenes.forEach((sc, j) => sc.classList.toggle("active", j === i));
+    [...dots.children].forEach((d, j) => d.classList.toggle("on", j <= i));
+    capEn.textContent = CAPS[i][0]; capFr.textContent = CAPS[i][1];
+    bar.style.width = ((offsets[i] / total) * 100) + "%";
+    if (audio) { audio.onended = null; audio.pause(); }
+    clearTimeout(timer);
+    if (i === 6) typeDemo();
+    if (i === 7) counters();
+    audio = new Audio(scenes[i].dataset.audio);
+    const advance = () => go(i + 1);
+    audio.onended = advance;
+    audio.play().then(() => {
+      const tick = setInterval(() => {
+        if (idx !== i || !playing) { clearInterval(tick); return; }
+        bar.style.width = (((offsets[i] + audio.currentTime) / total) * 100) + "%";
+      }, 250);
+    }).catch(() => { timer = setTimeout(advance, Number(scenes[i].dataset.dur) * 1000); });
+    playing = true; toggle.textContent = "⏸"; toggle.setAttribute("aria-label","Pause");
+    if (manual && audio.paused === false) { /* noop */ }
+  }
+
+  toggle.addEventListener("click", () => {
+    if (!audio) return;
+    if (playing) { audio.pause(); clearTimeout(timer); playing = false; toggle.textContent = "▶"; toggle.setAttribute("aria-label","Play"); }
+    else { audio.play().catch(()=>{}); playing = true; toggle.textContent = "⏸"; toggle.setAttribute("aria-label","Pause"); }
+  });
+  document.getElementById("restart").addEventListener("click", () => go(0, true));
+  document.getElementById("play").addEventListener("click", () => {
+    document.getElementById("overlay").style.display = "none";
+    go(0, true);
+  });
+})();
+</script>
+</body>
+</html>
