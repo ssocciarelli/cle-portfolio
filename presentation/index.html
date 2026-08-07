@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Clé — 2-minute animated presentation with voice-over. The key to Quebec real estate.">
-<meta property="og:title" content="Clé — Animated presentation (2 min)">
-<meta property="og:description" content="Sit back: motion graphics + voice-over explaining the Clé platform. No clicking required.">
+<meta name="description" content="Clé — full animated presentation with voice-over. The key to Quebec real estate.">
+<meta property="og:title" content="Clé — Animated presentation (4 min)">
+<meta property="og:description" content="Sit back: 14 scenes of motion graphics and narration explaining the Clé platform end to end.">
 <meta property="og:url" content="https://ssocciarelli.github.io/cle-portfolio/presentation/">
 <meta property="og:image" content="https://ssocciarelli.github.io/cle-portfolio/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74 74'%3E%3Cg fill='none' stroke='%23eab308' stroke-width='10' stroke-linecap='round'%3E%3Cpath d='M 42.4 13.6 A 19 19 0 1 0 42.4 42.4'/%3E%3Cpath d='M 44 42 L 63 61'/%3E%3Cpath d='M 51 49 L 44.5 55.5'/%3E%3Cpath d='M 60 58 L 52 66'/%3E%3C/g%3E%3C/svg%3E">
-<title>Clé — Animated presentation (2 min)</title>
+<title>Clé — Animated presentation (4 min)</title>
 <style>
   :root{--ink:#f5f4f1;--muted:#c8c4bd;--gold:#eab308;--goldl:#fcd34d;--em:#34d399;--red:#f87171;--card:rgba(255,255,255,.07);--line:rgba(255,255,255,.16)}
   *{box-sizing:border-box}
@@ -17,131 +17,150 @@
   body{font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);
     background:radial-gradient(120% 120% at 20% 0%,#0a5a44 0%,#04352a 45%,#02231c 100%);display:flex;flex-direction:column;min-height:100vh}
   .serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
-  #stage{position:relative;flex:1;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:24px}
-  .scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
-    opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;pointer-events:none;padding:24px}
-  .scene.active{opacity:1;transform:none;pointer-events:auto}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;backdrop-filter:blur(4px)}
-  .kick{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--goldl)}
-  h2{font-size:clamp(22px,3.6vw,38px);margin:0;text-align:center}
-  .tiles{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-  .tile{min-width:170px;text-align:center;opacity:0;transform:scale(.85)}
-  .active .tile{animation:pop .5s ease forwards}
-  .active .tile:nth-child(2){animation-delay:.35s}.active .tile:nth-child(3){animation-delay:.7s}.active .tile:nth-child(4){animation-delay:1.05s}
-  @keyframes pop{to{opacity:1;transform:scale(1)}}
-  .big{font-family:Georgia,serif;font-size:clamp(26px,4.2vw,44px);color:#fff}
-  .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
-  .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px;background:rgba(255,255,255,.05);opacity:0;transform:translateX(-12px)}
-  .active .chip{animation:slide .45s ease forwards}
-  .active .chip:nth-of-type(2){animation-delay:.4s}.active .chip:nth-of-type(3){animation-delay:.8s}.active .chip:nth-of-type(4){animation-delay:1.2s}.active .chip:nth-of-type(5){animation-delay:1.6s}
-  @keyframes slide{to{opacity:1;transform:none}}
-  .ok{color:var(--em)}.warn{color:var(--goldl)}
-  .browser{width:min(560px,92vw);border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#faf9f7;color:#1c1917;box-shadow:0 24px 60px rgba(0,0,0,.4)}
-  .bbar{display:flex;gap:6px;padding:10px 12px;background:#e7e5e4}
-  .dot{width:10px;height:10px;border-radius:50%;background:#c7c2ba}
-  .bbody{padding:16px 18px}
-  .ph{height:110px;border-radius:10px;background:linear-gradient(150deg,#1f2c4d,#3b4a73);position:relative;overflow:hidden}
-  .ph::after{content:"";position:absolute;inset:auto 16% 0 16%;top:45%;background:linear-gradient(180deg,rgba(255,255,255,.35),transparent);border-radius:8px 8px 0 0}
-  .price{font-family:Georgia,serif;font-size:26px;margin:10px 0 2px}
-  .badges .chip{color:#065f46;border-color:#a7f3d0;background:#ecfdf5;font-weight:600}
-  .lockcard{width:min(430px,90vw);text-align:center}
-  .locks{font-size:44px;letter-spacing:18px}
-  .blurname{filter:blur(7px);transition:filter 1.2s ease .6s}
-  .active .unlock .blurname{filter:blur(0)}
-  .sigline{height:2px;background:var(--goldl);width:0;margin:10px auto}
-  .active .sigline{animation:sig 1.4s ease .4s forwards}
-  @keyframes sig{to{width:70%}}
-  .thermo{width:min(420px,86vw);height:16px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden}
-  .thermo>div{height:100%;width:0;background:var(--em);border-radius:999px}
-  .active .thermo>div{animation:fill 2.2s ease .5s forwards}
-  @keyframes fill{to{width:28%}}
-  .stack{display:flex;width:min(460px,88vw);height:22px;border-radius:999px;overflow:hidden;border:1px solid var(--line)}
-  .stack>div{width:0}
-  .s-debt{background:#93a4c9}.s-pref{background:var(--em)}.s-com{background:var(--gold)}
-  .active .s-debt{animation:g1 1.4s ease .3s forwards}.active .s-pref{animation:g2 1.4s ease .9s forwards}.active .s-com{animation:g3 1.4s ease 1.5s forwards}
-  @keyframes g1{to{width:62%}}@keyframes g2{to{width:18%}}@keyframes g3{to{width:20%}}
-  .simband{background:#78350f;color:var(--goldl);border:1px solid var(--goldl);font-weight:800;letter-spacing:.14em;font-size:12px;padding:8px 16px;border-radius:10px;text-transform:uppercase}
-  .typing{font-family:ui-monospace,Menlo,monospace;font-size:14px;color:#1c1917;background:#fff;border-radius:10px;padding:12px 14px;min-height:64px;width:min(520px,90vw);text-align:left;white-space:pre-wrap}
-  .flash{border:2px solid var(--red);color:#b91c1c;background:#fef2f2;font-weight:700;border-radius:10px;padding:8px 14px;opacity:0}
-  .active .flash{animation:blink .5s ease 6s 3}
-  @keyframes blink{0%,100%{opacity:0}50%{opacity:1}}
-  .approve{opacity:0;color:var(--em);font-weight:800}
-  .active .approve{animation:pop .5s ease 9.5s forwards}
-  .count{font-family:Georgia,serif;font-size:clamp(30px,5vw,52px)}
-  .ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:13px 22px;font-weight:700;text-decoration:none;font-size:15px}
-  .btn-gold{background:var(--gold);color:#211a02}
-  .btn-ghost{border:1px solid var(--line);color:var(--ink)}
-  #caption{min-height:86px;padding:10px 22px 6px;text-align:center;max-width:900px;margin:0 auto}
-  #cap-en{font-size:clamp(15px,2vw,19px);margin:0}
-  #cap-fr{font-size:13px;color:var(--goldl);margin:6px 0 0;font-style:italic}
-  #controls{display:flex;align-items:center;gap:14px;justify-content:center;padding:12px 16px 20px;flex-wrap:wrap}
-  #controls button{background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:10px;min-height:42px;min-width:42px;font-size:15px;cursor:pointer}
-  #dots{display:flex;gap:7px}
-  #dots button{width:26px;height:8px;min-height:8px;border-radius:999px;padding:0;border:none;background:rgba(255,255,255,.2)}
-  #dots button.on{background:var(--gold)}
-  #bar{position:fixed;top:0;left:0;height:3px;background:var(--gold);width:0;transition:width .3s linear;z-index:5}
-  #overlay{position:fixed;inset:0;background:rgba(2,35,28,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;z-index:10;text-align:center;padding:24px}
-  #overlay p{color:var(--muted);max-width:420px;margin:0}
-  #play{background:var(--gold);border:none;color:#211a02;font-size:19px;font-weight:800;border-radius:999px;padding:18px 42px;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
-  .keylogo{display:flex;align-items:flex-end;justify-content:center}
-  .keylogo svg path{stroke-dasharray:140;stroke-dashoffset:140}
-  .active .keylogo svg path,#overlay .keylogo svg path{animation:draw 1.6s ease forwards}
-  @keyframes draw{to{stroke-dashoffset:0}}
-  .word{font-weight:800;letter-spacing:-.04em;font-size:64px;line-height:1;margin-left:-.34em}
-  /* bokeh d'arrière-plan */
   .bokeh{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
   .bokeh span{position:absolute;bottom:-60px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(252,211,77,.5),rgba(234,179,8,.12) 60%,transparent 70%);animation:rise linear infinite}
   @keyframes rise{to{transform:translateY(-115vh) translateX(6vw)}}
-  #stage,.scene{z-index:1}
-  /* tuiles retournables (cliquables pendant la lecture) */
+  #stage{position:relative;flex:1;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:24px;z-index:1}
+  .scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+    opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;pointer-events:none;padding:24px}
+  .scene.active{opacity:1;transform:none;pointer-events:auto}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px;backdrop-filter:blur(4px)}
+  .kick{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--goldl)}
+  h2{font-size:clamp(21px,3.4vw,36px);margin:0;text-align:center}
+  .tiles{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .tile{min-width:160px;text-align:center;opacity:0;transform:scale(.85);transition:transform .25s}
+  .tile:hover{transform:translateY(-4px) scale(1.02)}
+  .active .tile{animation:pop .5s ease forwards}
+  .active .tile:nth-child(2){animation-delay:.3s}.active .tile:nth-child(3){animation-delay:.6s}.active .tile:nth-child(4){animation-delay:.9s}.active .tile:nth-child(5){animation-delay:1.2s}
+  @keyframes pop{to{opacity:1;transform:scale(1)}}
+  .big{font-family:Georgia,serif;font-size:clamp(24px,4vw,42px);color:#fff}
+  .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+  .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px;background:rgba(255,255,255,.05);opacity:0;transform:translateX(-12px)}
+  .active .chip{animation:slide .45s ease forwards}
+  .active .chip:nth-of-type(2){animation-delay:.35s}.active .chip:nth-of-type(3){animation-delay:.7s}.active .chip:nth-of-type(4){animation-delay:1.05s}.active .chip:nth-of-type(5){animation-delay:1.4s}
+  @keyframes slide{to{opacity:1;transform:none}}
+  .ok{color:var(--em)}
   .flip{perspective:700px;cursor:pointer}
   .flip .in{position:relative;transition:transform .55s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
   .flip.on .in{transform:rotateY(180deg)}
   .flip .front,.flip .back{backface-visibility:hidden}
   .flip .back{position:absolute;inset:0;transform:rotateY(180deg);display:flex;align-items:center;justify-content:center;padding:12px;font-size:12.5px;color:var(--goldl);line-height:1.4}
   .hint{font-size:10.5px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
-  .tile:hover{transform:translateY(-4px) scale(1.02);transition:transform .25s}
-  /* curseur animé de la maquette navigateur */
+  .browser{width:min(560px,92vw);border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#faf9f7;color:#1c1917;box-shadow:0 24px 60px rgba(0,0,0,.4);position:relative}
+  .bbar{display:flex;gap:6px;padding:10px 12px;background:#e7e5e4}
+  .dot{width:10px;height:10px;border-radius:50%;background:#c7c2ba}
+  .bbody{padding:16px 18px}
+  .ph{height:104px;border-radius:10px;background:linear-gradient(150deg,#1f2c4d,#3b4a73);position:relative;overflow:hidden}
+  .ph::after{content:"";position:absolute;inset:auto 16% 0 16%;top:45%;background:linear-gradient(180deg,rgba(255,255,255,.35),transparent);border-radius:8px 8px 0 0}
+  .price{font-family:Georgia,serif;font-size:25px;margin:10px 0 2px}
+  .badges .chip{color:#065f46;border-color:#a7f3d0;background:#ecfdf5;font-weight:600}
   .cursor{position:absolute;width:20px;z-index:3;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));opacity:0;pointer-events:none}
   .active .cursor{animation:cursor-path 7s ease-in-out 1.2s forwards}
   @keyframes cursor-path{0%{opacity:0;left:8%;top:20%}10%{opacity:1}30%{left:24%;top:64%}38%{left:24%;top:64%;transform:scale(.85)}44%{transform:scale(1)}70%{left:62%;top:78%}78%{left:62%;top:78%;transform:scale(.85)}84%{transform:scale(1)}100%{opacity:1;left:78%;top:60%}}
-  .badges .chip.clicked{outline:2px solid #047857;outline-offset:2px}
-  .active .badges .chip:nth-of-type(2){transition:outline .2s}
-  /* cadenas qui s'ouvre */
-  .padlock{width:64px;height:70px;position:relative;margin:0 auto}
-  .padlock .shackle{position:absolute;left:50%;top:0;width:36px;height:34px;border:7px solid #d6d3d1;border-bottom:none;border-radius:20px 20px 0 0;transform:translateX(-50%);transform-origin:12% 90%;transition:transform .8s cubic-bezier(.3,1.4,.4,1) 2.2s}
+  .lockcard{width:min(430px,90vw);text-align:center}
+  .blurname{filter:blur(7px);transition:filter 1.2s ease .6s}
+  .active .unlock .blurname{filter:blur(0)}
+  .sigline{height:2px;background:var(--goldl);width:0;margin:10px auto}
+  .active .sigline{animation:sig 1.4s ease .4s forwards}
+  @keyframes sig{to{width:70%}}
+  .padlock{width:60px;height:66px;position:relative;margin:0 auto}
+  .padlock .shackle{position:absolute;left:50%;top:0;width:34px;height:32px;border:7px solid #d6d3d1;border-bottom:none;border-radius:20px 20px 0 0;transform:translateX(-50%);transform-origin:12% 90%;transition:transform .8s cubic-bezier(.3,1.4,.4,1) 2.2s}
   .active .padlock .shackle{transform:translateX(-62%) rotate(-28deg)}
-  .padlock .body{position:absolute;left:50%;bottom:0;width:56px;height:42px;background:linear-gradient(150deg,#fde68a,#b45309);border-radius:10px;transform:translateX(-50%)}
-  .padlock .hole{position:absolute;left:50%;bottom:14px;width:9px;height:14px;background:#3a2503;border-radius:5px;transform:translateX(-50%)}
-  /* pourcentages au-dessus de la structure de capital */
+  .padlock .body{position:absolute;left:50%;bottom:0;width:52px;height:40px;background:linear-gradient(150deg,#fde68a,#b45309);border-radius:10px;transform:translateX(-50%)}
+  .padlock .hole{position:absolute;left:50%;bottom:13px;width:8px;height:13px;background:#3a2503;border-radius:5px;transform:translateX(-50%)}
+  .thermo{width:min(420px,86vw);height:16px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden}
+  .thermo>div{height:100%;width:0;background:var(--em);border-radius:999px}
+  .active .thermo>div{animation:fill 2.2s ease .5s forwards}
+  @keyframes fill{to{width:28%}}
   .stackwrap{position:relative;width:min(460px,88vw)}
+  .stack{display:flex;height:22px;border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+  .stack>div{width:0}
+  .s-debt{background:#93a4c9}.s-pref{background:var(--em)}.s-com{background:var(--gold)}
+  .active .s-debt{animation:g1 1.4s ease .3s forwards}.active .s-pref{animation:g2 1.4s ease .9s forwards}.active .s-com{animation:g3 1.4s ease 1.5s forwards}
+  @keyframes g1{to{width:62%}}@keyframes g2{to{width:18%}}@keyframes g3{to{width:20%}}
   .stacklabels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:6px}
   .stacklabels b{color:#fff}
-  /* anneaux derrière les compteurs */
+  .simband{background:#78350f;color:var(--goldl);border:1px solid var(--goldl);font-weight:800;letter-spacing:.14em;font-size:12px;padding:8px 16px;border-radius:10px;text-transform:uppercase}
+  .typing{font-family:ui-monospace,Menlo,monospace;font-size:14px;color:#1c1917;background:#fff;border-radius:10px;padding:12px 14px;min-height:60px;width:min(520px,90vw);text-align:left;white-space:pre-wrap;position:relative;overflow:hidden}
+  .scanline{position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#047857,transparent);opacity:0}
+  .active .scanline{animation:scan 2.4s ease 3.4s 2}
+  @keyframes scan{0%{opacity:1;top:0}100%{opacity:1;top:100%}}
+  .flash{border:2px solid var(--red);color:#b91c1c;background:#fef2f2;font-weight:700;border-radius:10px;padding:8px 14px;opacity:0}
+  .active .flash{animation:blink .5s ease 6s 3}
+  @keyframes blink{0%,100%{opacity:0}50%{opacity:1}}
+  .approve{opacity:0;color:var(--em);font-weight:800;display:flex;align-items:center;gap:8px}
+  .active .approve{animation:pop .5s ease 9.5s forwards}
+  .approve svg path{stroke-dasharray:40;stroke-dashoffset:40}
+  .active .approve svg path{animation:draw .6s ease 9.8s forwards}
+  .count{font-family:Georgia,serif;font-size:clamp(26px,4.4vw,46px)}
   .ringbox{position:relative;display:inline-grid;place-items:center}
   .ringbox svg{position:absolute;inset:-10px auto auto -10px}
   .ring{stroke:var(--gold);stroke-width:3;fill:none;stroke-linecap:round;stroke-dasharray:220;stroke-dashoffset:220}
   .active .ring{animation:ringfill 1.8s ease .3s forwards}
   @keyframes ringfill{to{stroke-dashoffset:30}}
-  /* balayage du vérificateur IA */
-  .scanline{position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#047857,transparent);opacity:0}
-  .typing{position:relative;overflow:hidden}
-  .active .scanline{animation:scan 2.4s ease 3.4s 2}
-  @keyframes scan{0%{opacity:1;top:0}100%{opacity:1;top:100%}}
-  /* coche d'approbation dessinée */
-  .approve svg path{stroke-dasharray:40;stroke-dashoffset:40}
-  .active .approve svg path{animation:draw 0.6s ease 9.8s forwards}
+  .orbit{position:relative;width:min(340px,78vw);height:min(340px,78vw)}
+  .orbit .center{position:absolute;inset:0;display:grid;place-items:center}
+  .orbit .track{position:absolute;inset:8%;border:1px dashed rgba(252,211,77,.35);border-radius:50%;animation:spin 40s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .orbit .node{position:absolute;left:50%;top:50%;width:120px;margin:-18px 0 0 -60px;text-align:center;font-size:12px;font-weight:700;opacity:0}
+  .orbit .node span{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 12px;backdrop-filter:blur(3px)}
+  .active .orbit .node{animation:pop .5s ease forwards}
+  .active .orbit .node:nth-of-type(3){animation-delay:.3s}.active .orbit .node:nth-of-type(4){animation-delay:.6s}.active .orbit .node:nth-of-type(5){animation-delay:.9s}.active .orbit .node:nth-of-type(6){animation-delay:1.2s}
+  .bars{display:flex;gap:18px;align-items:flex-end;height:190px}
+  .bar{width:72px;display:flex;flex-direction:column;align-items:center;gap:8px;justify-content:flex-end;height:100%}
+  .bar i{width:100%;border-radius:8px 8px 0 0;background:linear-gradient(180deg,#fde68a,#b45309);height:0;transition:height 1.2s cubic-bezier(.2,.7,.2,1)}
+  .bar:nth-child(2) i{transition-delay:.25s}.bar:nth-child(3) i{transition-delay:.5s}.bar:nth-child(4) i{transition-delay:.75s}.bar:nth-child(5) i{transition-delay:1s}
+  .active .bar i{height:var(--h)}
+  .bar b{font-size:11px;color:#fff;white-space:nowrap}
+  .bar .lbl{font-size:9.5px;white-space:nowrap}
+  .timeline{position:relative;width:min(640px,90vw);height:120px}
+  .timeline .rail{position:absolute;left:0;right:0;top:26px;height:3px;background:rgba(255,255,255,.15)}
+  .timeline .railfill{position:absolute;left:0;top:26px;height:3px;background:var(--gold);width:0}
+  .active .timeline .railfill{animation:rail 3.2s ease .4s forwards}
+  @keyframes rail{to{width:100%}}
+  .timeline .mk{position:absolute;top:0;width:140px;margin-left:-70px;text-align:center;opacity:0}
+  .active .timeline .mk{animation:pop .5s ease forwards}
+  .active .timeline .mk:nth-of-type(2){animation-delay:.9s}.active .timeline .mk:nth-of-type(3){animation-delay:1.7s}.active .timeline .mk:nth-of-type(4){animation-delay:2.5s}
+  .timeline .mk::before{content:"";display:block;width:14px;height:14px;border-radius:50%;background:var(--gold);margin:20px auto 8px;box-shadow:0 0 0 5px rgba(234,179,8,.25)}
+  .timeline .mk b{font-size:12.5px;display:block}
+  .timeline .mk span{font-size:10.5px;color:var(--muted)}
+  .donutbox{display:flex;gap:26px;align-items:center;flex-wrap:wrap;justify-content:center}
+  .donut circle{fill:none;stroke-width:20;stroke-dasharray:0 999;transition:stroke-dasharray 1.3s ease}
+  .legend{font-size:13px;display:grid;gap:7px;text-align:left}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:13px 22px;font-weight:700;text-decoration:none;font-size:15px}
+  .btn-gold{background:var(--gold);color:#211a02}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink)}
+  #caption{min-height:84px;padding:8px 22px 4px;text-align:center;max-width:900px;margin:0 auto;z-index:1}
+  #cap-en{font-size:clamp(14px,1.9vw,18px);margin:0}
+  #cap-fr{font-size:12.5px;color:var(--goldl);margin:5px 0 0;font-style:italic}
+  #controls{display:flex;align-items:center;gap:12px;justify-content:center;padding:10px 16px 18px;flex-wrap:wrap;z-index:1}
+  #controls button{background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:10px;min-height:42px;min-width:42px;font-size:15px;cursor:pointer}
+  #dots{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
+  #dots button{width:18px;height:8px;min-height:8px;border-radius:999px;padding:0;border:none;background:rgba(255,255,255,.2)}
+  #dots button.on{background:var(--gold)}
+  #bar{position:fixed;top:0;left:0;height:3px;background:var(--gold);width:0;transition:width .3s linear;z-index:5}
+  #overlay{position:fixed;inset:0;background:rgba(2,35,28,.93);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;z-index:10;text-align:center;padding:24px}
+  #overlay p{color:var(--muted);max-width:460px;margin:0}
+  #play,#play-fr{font-size:18px;font-weight:800;border-radius:999px;padding:17px 38px;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
+  #play{background:var(--gold);border:none;color:#211a02}
+  #play-fr{background:transparent;border:2px solid var(--gold);color:var(--goldl)}
+  .keylogo{display:flex;align-items:flex-start;justify-content:center}
+  .keylogo svg path{stroke-dasharray:150;stroke-dashoffset:150}
+  .active .keylogo svg path,#overlay .keylogo svg path{animation:draw 1.6s ease forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
   .keyspin{animation:none}
   .active .keyspin{animation:keywig 2.6s ease .4s}
   @keyframes keywig{0%,100%{transform:rotate(0)}30%{transform:rotate(-7deg)}60%{transform:rotate(5deg)}}
+  .word{font-weight:800;letter-spacing:-.03em;line-height:1;margin-left:-22px;margin-top:8px;color:#fafaf9}
   @media (prefers-reduced-motion: reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
 <div id="bar"></div>
 <div class="bokeh" aria-hidden="true">
-  <span style="left:6%;width:90px;height:90px;animation-duration:26s;animation-delay:0s"></span>
+  <span style="left:6%;width:90px;height:90px;animation-duration:26s"></span>
   <span style="left:22%;width:46px;height:46px;animation-duration:21s;animation-delay:6s"></span>
   <span style="left:41%;width:70px;height:70px;animation-duration:30s;animation-delay:3s"></span>
   <span style="left:63%;width:38px;height:38px;animation-duration:19s;animation-delay:9s"></span>
@@ -150,41 +169,56 @@
 </div>
 
 <div id="overlay">
-  <div class="keylogo keyspin">
-    <svg viewBox="0 0 74 74" width="97" aria-hidden="true"><defs><linearGradient id="lg1" gradientUnits="userSpaceOnUse" x1="8" y1="4" x2="62" y2="66"><stop offset="0" stop-color="#fde68a"/><stop offset="0.45" stop-color="#eab308"/><stop offset="1" stop-color="#996207"/></linearGradient></defs><g fill="none" stroke="#7c4a03" stroke-width="9" stroke-linecap="round" opacity="0.25" transform="translate(0,1.8)"><path d="M 42.4 13.6 A 19 19 0 1 0 42.4 42.4"/><path d="M 44 42 L 63 61"/><path d="M 51 49 L 44.5 55.5"/><path d="M 60 58 L 52 66"/></g><g fill="none" stroke="url(#lg1)" stroke-width="9" stroke-linecap="round"><path d="M 42.4 13.6 A 19 19 0 1 0 42.4 42.4"/><path d="M 44 42 L 63 61"/><path d="M 51 49 L 44.5 55.5"/><path d="M 60 58 L 52 66"/></g><path d="M 36 5.6 A 20.5 20.5 0 0 0 13 15.4" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2.8" stroke-linecap="round"/></svg>
-    <span class="word">lé<span style="color:#eab308">.</span></span>
+  <div class="keylogo">
+    <svg viewBox="0 0 74 74" width="86" aria-hidden="true"><g fill="none" stroke="#eab308" stroke-width="9" stroke-linecap="round"><path d="M 42.4 13.6 A 19 19 0 1 0 42.4 42.4"/><path d="M 44 42 L 63 61"/><path d="M 51 49 L 44.5 55.5"/><path d="M 60 58 L 52 66"/></g></svg>
+    <span class="word" style="font-size:64px">lé<span style="color:#eab308">.</span></span>
   </div>
-  <h1 class="serif" style="font-size:clamp(24px,4vw,40px);margin:0">The key to Quebec real estate</h1>
-  <p>A 2-minute animated presentation with voice-over. Sit back — no clicking needed. Audio on. 🎧</p>
+  <h1 class="serif" style="font-size:clamp(24px,4vw,40px);margin:0" data-fr="La clé de l'immobilier québécois">The key to Quebec real estate</h1>
+  <p data-fr="Une présentation animée complète (≈ 4 minutes) avec narration. Installez-vous — aucun clic requis. Audio recommandé. 🎧">A complete animated presentation (≈ 4 minutes) with narration. Sit back — no clicking needed. Audio on. 🎧</p>
   <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
     <button id="play" data-lang="en">▶ &nbsp;Play in English</button>
-    <button id="play-fr" data-lang="fr" style="background:transparent;border:2px solid var(--gold);color:var(--goldl);font-size:19px;font-weight:800;border-radius:999px;padding:16px 40px;cursor:pointer">▶ &nbsp;Écouter en français</button>
+    <button id="play-fr" data-lang="fr">▶ &nbsp;Écouter en français</button>
   </div>
-  <p style="font-size:12px">Fictional demonstration data · Simulation only — no real transaction</p>
+  <p style="font-size:12px" data-fr="Données fictives de démonstration · Simulation seulement — aucune transaction réelle">Fictional demonstration data · Simulation only — no real transaction</p>
 </div>
 
 <main id="stage" aria-live="off">
 
-  <section class="scene" data-scene="s1" data-dur-en="16" data-dur-fr="16">
-    <div class="keylogo"><svg viewBox="0 0 74 74" width="126" aria-hidden="true"><defs><linearGradient id="lg2" gradientUnits="userSpaceOnUse" x1="8" y1="4" x2="62" y2="66"><stop offset="0" stop-color="#fde68a"/><stop offset="0.45" stop-color="#eab308"/><stop offset="1" stop-color="#996207"/></linearGradient></defs><g fill="none" stroke="#7c4a03" stroke-width="9" stroke-linecap="round" opacity="0.25" transform="translate(0,1.8)"><path d="M 42.4 13.6 A 19 19 0 1 0 42.4 42.4"/><path d="M 44 42 L 63 61"/><path d="M 51 49 L 44.5 55.5"/><path d="M 60 58 L 52 66"/></g><g fill="none" stroke="url(#lg2)" stroke-width="9" stroke-linecap="round"><path d="M 42.4 13.6 A 19 19 0 1 0 42.4 42.4"/><path d="M 44 42 L 63 61"/><path d="M 51 49 L 44.5 55.5"/><path d="M 60 58 L 52 66"/></g><path d="M 36 5.6 A 20.5 20.5 0 0 0 13 15.4" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2.8" stroke-linecap="round"/></svg><span class="word" style="font-size:84px">lé<span style="color:#eab308">.</span></span></div>
+  <section class="scene" data-scene="p1" data-dur-en="16" data-dur-fr="19">
+    <div class="keylogo keyspin"><svg viewBox="0 0 74 74" width="112" aria-hidden="true"><g fill="none" stroke="#eab308" stroke-width="9" stroke-linecap="round"><path d="M 42.4 13.6 A 19 19 0 1 0 42.4 42.4"/><path d="M 44 42 L 63 61"/><path d="M 51 49 L 44.5 55.5"/><path d="M 60 58 L 52 66"/></g></svg><span class="word" style="font-size:82px">lé<span style="color:#eab308">.</span></span></div>
     <h2 class="serif" data-fr="Une seule plateforme de confiance pour l'immobilier québécois.">One trusted platform for Quebec real estate.</h2>
     <div class="tiles"><span class="chip" data-fr="Professionnels">Professionals</span><span class="chip" data-fr="Propriétés">Properties</span><span class="chip" data-fr="Entreprises">Businesses</span><span class="chip">Capital</span></div>
   </section>
 
-  <section class="scene" data-scene="s2" data-dur-en="16" data-dur-fr="20">
+  <section class="scene" data-scene="p2" data-dur-en="16" data-dur-fr="23">
     <span class="kick" data-fr="Le problème">The problem</span>
     <h2 class="serif" data-fr="Trois portes verrouillées. Une seule clé.">Three locked doors. One key.</h2>
     <div class="tiles">
       <div class="tile card flip" onclick="this.classList.toggle('on')"><div class="in"><div class="front"><div class="big">$<span class="count" data-n="24600">0</span></div><div class="lbl" data-fr="de commission par vente médiane">commission on a median sale</div><div class="hint">＋</div></div><div class="back" data-fr="≈ 5 % sur 97 000 ventes/an — un bassin de 2,1 G$ au Québec.">≈ 5% on 97,000 sales a year — a $2.1B Quebec pool.</div></div></div>
       <div class="tile card flip" onclick="this.classList.toggle('on')"><div class="in"><div class="front"><div class="big">$<span class="count" data-n="622500">0</span></div><div class="lbl" data-fr="prix médian montréalais, en hausse">Montréal median, still climbing</div><div class="hint">＋</div></div><div class="back" data-fr="+9 % en un an — acheter seul devient hors de portée.">+9% in one year — buying alone is out of reach.</div></div></div>
-      <div class="tile card flip" onclick="this.classList.toggle('on')"><div class="in"><div class="front"><div class="big" data-fr="Exclus">Locked out</div><div class="lbl" data-fr="investisseurs ordinaires exclus">everyday investors</div><div class="hint">＋</div></div><div class="back" data-fr="Fundrise : 3,3 G$ US d'actifs — le canal canadien reste vide.">Fundrise: US$3.3B AUM — Canada's channel sits empty.</div></div></div>
+      <div class="tile card flip" onclick="this.classList.toggle('on')"><div class="in"><div class="front"><div class="big" data-fr="Exclus">Locked out</div><div class="lbl" data-fr="investisseurs ordinaires">everyday investors</div><div class="hint">＋</div></div><div class="back" data-fr="Fundrise : 3,3 G$ US d'actifs — le canal canadien reste vide.">Fundrise: US$3.3B AUM — Canada's channel sits empty.</div></div></div>
     </div>
-    <div class="locks" aria-hidden="true">🔒 🔒 🔒 <span style="margin:0 6px">→</span><svg viewBox="0 0 74 74" width="46" style="vertical-align:-10px"><g fill="none" stroke="#eab308" stroke-width="10" stroke-linecap="round"><path d="M 42.4 13.6 A 19 19 0 1 0 42.4 42.4"/><path d="M 44 42 L 63 61"/><path d="M 51 49 L 44.5 55.5"/><path d="M 60 58 L 52 66"/></g></svg></div>
+    <div style="font-size:38px;letter-spacing:14px" aria-hidden="true">🔒 🔒 🔒 <span style="margin:0 6px">→</span><svg viewBox="0 0 74 74" width="42" style="vertical-align:-10px"><g fill="none" stroke="#eab308" stroke-width="10" stroke-linecap="round"><path d="M 42.4 13.6 A 19 19 0 1 0 42.4 42.4"/><path d="M 44 42 L 63 61"/><path d="M 51 49 L 44.5 55.5"/><path d="M 60 58 L 52 66"/></g></svg></div>
   </section>
 
-  <section class="scene" data-scene="s3" data-dur-en="19" data-dur-fr="17">
+  <section class="scene" data-scene="p3" data-dur-en="14" data-dur-fr="18">
+    <span class="kick" data-fr="La vision">The idea</span>
+    <h2 class="serif" data-fr="Cinq moteurs éprouvés. Un seul réseau.">Five proven engines. One network.</h2>
+    <div class="orbit">
+      <div class="track" aria-hidden="true"></div>
+      <div class="center"><svg viewBox="0 0 74 74" width="84" aria-hidden="true"><g fill="none" stroke="#eab308" stroke-width="9" stroke-linecap="round"><path d="M 42.4 13.6 A 19 19 0 1 0 42.4 42.4"/><path d="M 44 42 L 63 61"/><path d="M 51 49 L 44.5 55.5"/><path d="M 60 58 L 52 66"/></g></svg></div>
+      <div class="node" style="transform:translate(0,-152px)"><span data-fr="Réseau pro">Pro network</span></div>
+      <div class="node" style="transform:translate(145px,-47px)"><span data-fr="Marché">Marketplace</span></div>
+      <div class="node" style="transform:translate(90px,123px)"><span data-fr="Entreprises">Businesses</span></div>
+      <div class="node" style="transform:translate(-90px,123px)"><span data-fr="Projets">Projects</span></div>
+      <div class="node" style="transform:translate(-145px,-47px)"><span data-fr="Investissement simulé">Simulated investing</span></div>
+    </div>
+    <p class="lbl" data-fr="Français d'abord · anglais complet">French first · English always</p>
+  </section>
+
+  <section class="scene" data-scene="p4" data-dur-en="18" data-dur-fr="23">
     <span class="kick" data-fr="Marché">Marketplace</span>
-    <div class="browser" style="position:relative">
+    <div class="browser">
       <svg class="cursor" viewBox="0 0 24 24"><path d="M4 2 L20 12 L12.5 13.5 L9 21 Z" fill="#fff" stroke="#1c1917" stroke-width="1.4"/></svg>
       <div class="bbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
       <div class="bbody">
@@ -193,64 +227,119 @@
         <div class="badges"><span class="chip">✓ Permis OACIQ</span><span class="chip">✓ Divulgations</span><span class="chip">✓ Garantie légale</span><span class="chip">✓ Révision publicitaire</span></div>
       </div>
     </div>
+    <p class="lbl" data-fr="La loi du courtage, intégrée au produit">Brokerage law, built into the product</p>
   </section>
 
-  <section class="scene" data-scene="s4" data-dur-en="16" data-dur-fr="17">
+  <section class="scene" data-scene="p5" data-dur-en="15" data-dur-fr="20">
     <span class="kick" data-fr="Entreprises confidentielles">Confidential businesses</span>
     <div class="card lockcard unlock">
       <div class="padlock" aria-hidden="true"><div class="shackle"></div><div class="body"></div><div class="hole"></div></div>
-      <h2 class="serif" style="font-size:22px">Restaurant établi — Plateau</h2>
-      <p class="lbl" style="margin:6px 0">Revenue $980K · SDE $165K</p>
+      <h2 class="serif" style="font-size:21px">Restaurant établi — Plateau</h2>
+      <p class="lbl" style="margin:6px 0" data-fr="Revenus 980 k$ · BDV 165 k$">Revenue $980K · SDE $165K</p>
       <div class="sigline"></div>
-      <p style="margin:8px 0 0"><span class="lbl" data-fr="Révélé après l’entente :">Revealed after NDA:</span><br><strong class="blurname" style="font-size:20px">Bistro Le Sarrasin (fictif)</strong></p>
+      <p style="margin:8px 0 0"><span class="lbl" data-fr="Révélé après l'entente :">Revealed after NDA:</span><br><strong class="blurname" style="font-size:19px">Bistro Le Sarrasin (fictif)</strong></p>
       <p class="lbl" style="margin-top:8px" data-fr="Chaque accès journalisé">Every access logged</p>
     </div>
   </section>
 
-  <section class="scene" data-scene="s5" data-dur-en="15" data-dur-fr="15">
+  <section class="scene" data-scene="p6" data-dur-en="13" data-dur-fr="17">
     <span class="kick" data-fr="Projets &amp; Équipes">Projects &amp; Teams</span>
-    <h2 class="serif" data-fr="Du réseau au flux d’affaires.">From network to deal flow.</h2>
-    <div class="tiles"><span class="chip">🏗 Architecte</span><span class="chip">⚙️ Ingénieure</span><span class="chip">🔨 Entrepreneur</span><span class="chip">💼 Lead investor seat</span></div>
+    <h2 class="serif" data-fr="Du réseau au flux d'affaires.">From network to deal flow.</h2>
+    <div class="tiles"><span class="chip">🏗 Architecte</span><span class="chip">⚙️ Ingénieure</span><span class="chip">🔨 Entrepreneur</span><span class="chip" data-fr="💼 Siège d'investisseur principal">💼 Lead investor seat</span></div>
     <div class="thermo" role="img" aria-label="Non-binding intentions: 28% of target"><div></div></div>
-    <p class="lbl"><span class="count" data-n="28">0</span> % — <span data-fr="Intentions non contraignantes · thermomètre en direct">Non-binding intentions · live thermometer</span></p>
+    <p class="lbl"><span class="count" data-n="28">0</span> % — <span data-fr="intentions non contraignantes · en direct">non-binding intentions · live</span></p>
   </section>
 
-  <section class="scene" data-scene="s6" data-dur-en="18" data-dur-fr="18">
+  <section class="scene" data-scene="p7" data-dur-en="16" data-dur-fr="21">
     <div class="simband" data-fr="Simulation — aucune transaction réelle">Simulation — no real transaction</div>
-    <h2 class="serif" data-fr="L’Investor Hub, en toute conformité.">The Investor Hub, done right.</h2>
+    <h2 class="serif" data-fr="L'Investor Hub, en toute conformité.">The Investor Hub, done right.</h2>
     <div class="stackwrap">
       <div class="stack" role="img" aria-label="Capital stack: 62% debt, 18% preferred, 20% common"><div class="s-debt"></div><div class="s-pref"></div><div class="s-com"></div></div>
       <div class="stacklabels"><span><b><span class="count" data-n="62">0</span>%</b> dette</span><span><b><span class="count" data-n="18">0</span>%</b> privilégiée</span><span><b><span class="count" data-n="20">0</span>%</b> ordinaire</span></div>
     </div>
-    <p class="lbl" data-fr="62 % dette · 18 % privilégiée · 20 % ordinaire — rendements cibles, jamais garantis">62% debt · 18% preferred · 20% common — target returns, never guaranteed</p>
-    <div class="tiles"><span class="chip">🛡 Level 2 identity</span><span class="chip">📋 Simulated KYC</span><span class="chip ok">🗂 Data room unlocked</span></div>
+    <div class="tiles"><span class="chip" data-fr="🛡 Identité niveau 2">🛡 Level 2 identity</span><span class="chip" data-fr="📋 KYC simulé">📋 Simulated KYC</span><span class="chip ok" data-fr="🗂 Salle de documents déverrouillée">🗂 Data room unlocked</span></div>
   </section>
 
-  <section class="scene" data-scene="s7" data-dur-en="18" data-dur-fr="21">
-    <span class="kick" data-fr="Clé possède sa couche d’intelligence">Clé owns the intelligence layer</span>
+  <section class="scene" data-scene="p8" data-dur-en="15" data-dur-fr="22">
+    <span class="kick" data-fr="Modèle d'affaires">Business model</span>
+    <h2 class="serif" data-fr="Cinq sources de revenus.">Five revenue streams.</h2>
+    <div class="bars">
+      <div class="bar"><i style="--h:78%"></i><b data-fr="Forfaits">Packages</b><span class="lbl">$1,199–1,999</span></div>
+      <div class="bar"><i style="--h:60%"></i><b data-fr="Abonnements">Subscriptions</b><span class="lbl">$39–249/mo</span></div>
+      <div class="bar"><i style="--h:42%"></i><b data-fr="Frais de groupe">Group fees</b><span class="lbl">$2,500</span></div>
+      <div class="bar"><i style="--h:90%"></i><b data-fr="Plateforme capital*">Capital platform*</b><span class="lbl" data-fr="*une fois réglementée">*once regulated</span></div>
+      <div class="bar"><i style="--h:26%"></i><b data-fr="Pub encadrée">Capped ads</b><span class="lbl">1-in-6 max</span></div>
+    </div>
+  </section>
+
+  <section class="scene" data-scene="p9" data-dur-en="16" data-dur-fr="22">
+    <span class="kick" data-fr="Clé possède sa couche d'intelligence">Clé owns the intelligence layer</span>
     <div class="typing" id="typebox" aria-hidden="true"><div class="scanline"></div></div>
-    <div class="flash">⛔ « Rendement garanti » — BLOCKED by guardrails</div>
-    <div class="approve" style="display:flex;align-items:center;gap:8px"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12.5 L10 18.5 L20 6.5" fill="none" stroke="#34d399" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Révisé et approuvé par un humain">Human reviewed &amp; approved</span></div>
+    <div class="flash">⛔ « Rendement garanti » — BLOCKED</div>
+    <div class="approve"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12.5 L10 18.5 L20 6.5" fill="none" stroke="#34d399" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Révisé et approuvé par un humain">Human reviewed &amp; approved</span></div>
     <p class="lbl" data-fr="GPT ou Claude en dessous — interchangeables. Clé garde le contrôle.">GPT or Claude underneath — swappable. Clé stays in charge.</p>
   </section>
 
-  <section class="scene" data-scene="s8" data-dur-en="19" data-dur-fr="21">
+  <section class="scene" data-scene="p10" data-dur-en="15" data-dur-fr="19">
     <span class="kick" data-fr="Des preuves, pas des promesses">Proof, not promises</span>
     <div class="tiles">
-      <div class="tile card"><div class="ringbox"><svg width="84" height="84" viewBox="0 0 84 84"><circle class="ring" cx="42" cy="42" r="35"/></svg><div class="count" data-n="114">0</div></div><div class="lbl" data-fr="tests unitaires et composants">unit &amp; component tests</div></div>
+      <div class="tile card"><div class="ringbox"><svg width="84" height="84" viewBox="0 0 84 84"><circle class="ring" cx="42" cy="42" r="35"/></svg><div class="count" data-n="150">0</div></div><div class="lbl" data-fr="vérifications automatisées">automated checks</div></div>
       <div class="tile card"><div class="count" data-n="34">0</div><div class="lbl" data-fr="parcours de bout en bout">end-to-end flows</div></div>
       <div class="tile card"><div class="count" data-n="2">0</div><div class="lbl" data-fr="langues complètes">complete languages</div></div>
-      <div class="tile card"><div class="count" data-n="5">0</div><div class="lbl" data-fr="régimes juridiques québécois couverts">Quebec legal regimes mapped</div></div>
+      <div class="tile card"><div class="count" data-n="0">0</div><div class="lbl" data-fr="violation a11y sérieuse">serious a11y violations</div></div>
     </div>
-    <div class="tiles"><span class="chip">OACIQ</span><span class="chip">Chambre des notaires</span><span class="chip">RBQ</span><span class="chip">AMF</span><span class="chip">Loi 25</span></div>
   </section>
 
-  <section class="scene" data-scene="s9" data-dur-en="9" data-dur-fr="11">
-    <div class="keylogo"><svg viewBox="0 0 74 74" width="103" aria-hidden="true"><defs><linearGradient id="lg3" gradientUnits="userSpaceOnUse" x1="8" y1="4" x2="62" y2="66"><stop offset="0" stop-color="#fde68a"/><stop offset="0.45" stop-color="#eab308"/><stop offset="1" stop-color="#996207"/></linearGradient></defs><g fill="none" stroke="#7c4a03" stroke-width="9" stroke-linecap="round" opacity="0.25" transform="translate(0,1.8)"><path d="M 42.4 13.6 A 19 19 0 1 0 42.4 42.4"/><path d="M 44 42 L 63 61"/><path d="M 51 49 L 44.5 55.5"/><path d="M 60 58 L 52 66"/></g><g fill="none" stroke="url(#lg3)" stroke-width="9" stroke-linecap="round"><path d="M 42.4 13.6 A 19 19 0 1 0 42.4 42.4"/><path d="M 44 42 L 63 61"/><path d="M 51 49 L 44.5 55.5"/><path d="M 60 58 L 52 66"/></g><path d="M 36 5.6 A 20.5 20.5 0 0 0 13 15.4" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2.8" stroke-linecap="round"/></svg><span class="word" style="font-size:68px">lé<span style="color:#eab308">.</span></span></div>
-    <h2 class="serif" data-fr="Bâtissons le réseau de confiance que ce marché mérite.">Let's build the trusted network this market deserves.</h2>
+  <section class="scene" data-scene="p11" data-dur-en="15" data-dur-fr="20">
+    <span class="kick" data-fr="Ancré dans le droit québécois">Grounded in Quebec law</span>
+    <div class="tiles">
+      <div class="tile card flip" onclick="this.classList.toggle('on')"><div class="in"><div class="front"><b>OACIQ</b><div class="lbl" data-fr="courtage immobilier">real-estate brokerage</div><div class="hint">＋</div></div><div class="back" data-fr="Permis, divulgations et révision publicitaire sur chaque fiche.">Licences, disclosures and ad review on every listing.</div></div></div>
+      <div class="tile card flip" onclick="this.classList.toggle('on')"><div class="in"><div class="front"><b>CNQ</b><div class="lbl" data-fr="notaires">notaries</div><div class="hint">＋</div></div><div class="back" data-fr="Notaires au dossier et dans chaque salle de transaction.">Notaries on file and in every deal room.</div></div></div>
+      <div class="tile card flip" onclick="this.classList.toggle('on')"><div class="in"><div class="front"><b>RBQ</b><div class="lbl" data-fr="construction">construction</div><div class="hint">＋</div></div><div class="back" data-fr="Licence affichée au format réel sur les profils d'entrepreneurs.">Licence shown in the real format on contractor profiles.</div></div></div>
+      <div class="tile card flip" onclick="this.classList.toggle('on')"><div class="in"><div class="front"><b>AMF</b><div class="lbl" data-fr="finance">financial</div><div class="hint">＋</div></div><div class="back" data-fr="Tout l'investissement est une simulation étiquetée — prêt pour un partenaire réglementé.">All investing is a labeled simulation — ready for a regulated partner.</div></div></div>
+      <div class="tile card flip" onclick="this.classList.toggle('on')"><div class="in"><div class="front"><b>Loi 25</b><div class="lbl" data-fr="vie privée">privacy</div><div class="hint">＋</div></div><div class="back" data-fr="Droits d'accès, rectification, portabilité — contrôles présents dans le produit.">Access, rectification, portability — controls live in the product.</div></div></div>
+    </div>
+  </section>
+
+  <section class="scene" data-scene="p12" data-dur-en="10" data-dur-fr="15">
+    <span class="kick" data-fr="Feuille de route">Roadmap</span>
+    <div class="timeline">
+      <div class="rail"></div><div class="railfill"></div>
+      <div class="mk" style="left:10%"><b data-fr="Vente directe">Owner-direct</b><span>Montréal</span></div>
+      <div class="mk" style="left:37%"><b data-fr="Groupes d'achat">Buying groups</b><span data-fr="indivision outillée">tooled co-buying</span></div>
+      <div class="mk" style="left:64%"><b data-fr="Partenaire réglementé">Regulated partner</b><span data-fr="investissement réel">real investing</span></div>
+      <div class="mk" style="left:90%"><b data-fr="Échelle">Scale</b><span>Québec → Canada</span></div>
+    </div>
+  </section>
+
+  <section class="scene" data-scene="p13" data-dur-en="10" data-dur-fr="13">
+    <span class="kick" data-fr="La demande">The ask</span>
+    <div class="donutbox">
+      <svg class="donut" width="190" height="190" viewBox="0 0 190 190" role="img" aria-label="Use of funds: product 40%, growth 30%, licensing 20%, operations 10%">
+        <circle cx="95" cy="95" r="70" stroke="rgba(255,255,255,.12)" style="stroke-dasharray:440 0"/>
+        <circle id="d1" cx="95" cy="95" r="70" stroke="#eab308" transform="rotate(-90 95 95)"/>
+        <circle id="d2" cx="95" cy="95" r="70" stroke="#34d399" transform="rotate(54 95 95)"/>
+        <circle id="d3" cx="95" cy="95" r="70" stroke="#93a4c9" transform="rotate(162 95 95)"/>
+        <circle id="d4" cx="95" cy="95" r="70" stroke="#fcd34d" transform="rotate(234 95 95)"/>
+        <text x="95" y="90" text-anchor="middle" fill="#fff" font-family="Georgia" font-size="30">$<tspan class="count" data-n="3.5" data-dec="1">0</tspan>M</text>
+        <text x="95" y="112" text-anchor="middle" fill="#c8c4bd" font-size="11" data-fr="amorçage">seed</text>
+      </svg>
+      <div class="legend">
+        <div><i style="background:#eab308"></i><b>40%</b> — <span data-fr="Produit et ingénierie">Product &amp; engineering</span></div>
+        <div><i style="background:#34d399"></i><b>30%</b> — <span data-fr="Croissance et marché">Growth &amp; go-to-market</span></div>
+        <div><i style="background:#93a4c9"></i><b>20%</b> — <span data-fr="Conformité et licences">Licensing &amp; legal</span></div>
+        <div><i style="background:#fcd34d"></i><b>10%</b> — <span data-fr="Opérations">Operations</span></div>
+      </div>
+    </div>
+    <p class="lbl" data-fr="18–24 mois de piste — détails dans le plan">18–24 months of runway — details in the plan</p>
+  </section>
+
+  <section class="scene" data-scene="p14" data-dur-en="8" data-dur-fr="13">
+    <div class="keylogo keyspin"><svg viewBox="0 0 74 74" width="92" aria-hidden="true"><g fill="none" stroke="#eab308" stroke-width="9" stroke-linecap="round"><path d="M 42.4 13.6 A 19 19 0 1 0 42.4 42.4"/><path d="M 44 42 L 63 61"/><path d="M 51 49 L 44.5 55.5"/><path d="M 60 58 L 52 66"/></g></svg><span class="word" style="font-size:66px">lé<span style="color:#eab308">.</span></span></div>
+    <h2 class="serif" data-fr="Ouvrons ces portes — ensemble.">Let's open these doors — together.</h2>
     <div class="ctas">
       <a class="btn btn-gold" href="https://ssocciarelli.github.io/cle-mvp/" target="_blank" rel="noopener" data-fr="Essayer la démo en direct">Try the live demo</a>
-      <a class="btn btn-ghost" href="https://ssocciarelli.github.io/cle-demo/Cle-Investor-Business-Plan.pdf" target="_blank" rel="noopener" data-fr="Plan d’affaires (PDF)">Business plan (PDF)</a>
+      <a class="btn btn-ghost" href="https://ssocciarelli.github.io/cle-demo/Cle-Investor-Business-Plan.pdf" target="_blank" rel="noopener" data-fr="Plan d'affaires (PDF)">Business plan (PDF)</a>
       <a class="btn btn-ghost" href="../" data-fr="Portfolio investisseurs">Investor portfolio</a>
     </div>
   </section>
@@ -268,10 +357,12 @@
 <script>
 (function(){
   const CAPS = [
-    ["A working product on fictional demonstration data — professionals, properties, businesses and capital, together.",
-     "Un produit fonctionnel sur données fictives — professionnels, propriétés, entreprises et capital, réunis."],
-    ["≈ $24,600 of commission per median sale · a climbing median price · investors locked out.",
-     "≈ 24 600 $ de commission par vente médiane · un prix médian qui grimpe · des investisseurs sans porte d'entrée."],
+    ["Real, working software on fictional demo data — professionals, properties, businesses and capital, together.",
+     "Un vrai logiciel fonctionnel sur données fictives — professionnels, propriétés, entreprises et capital, réunis."],
+    ["≈ $24,600 of commission per median sale · a climbing median price · investors locked out. Tap a tile to dig in.",
+     "≈ 24 600 $ de commission par vente médiane · un prix médian qui grimpe · des investisseurs exclus. Touchez une tuile."],
+    ["Five proven engines — community, marketplace, confidential sales, projects, simulated investing — in one network.",
+     "Cinq moteurs éprouvés — communauté, marché, ventes confidentielles, projets, investissement simulé — en un réseau."],
     ["Every listing carries licence, disclosures, legal warranty and an advertising-review status.",
      "Chaque inscription porte permis, divulgations, garantie légale et statut de révision publicitaire."],
     ["Anonymous until the NDA is signed (simulated) — with a complete access log.",
@@ -280,10 +371,18 @@
      "Les porteurs recrutent l'équipe et recueillent des intentions NON contraignantes, suivies en direct."],
     ["Fully simulated — capital stack, fees, risks, and a gated data room. The compliant blueprint.",
      "Entièrement simulé — structure de capital, frais, risques, salle de documents gardée. Le plan conforme."],
+    ["Packages, subscriptions, group fees, a regulated capital take, and capped native ads.",
+     "Forfaits, abonnements, frais de groupe, une part capital réglementée et une publicité encadrée."],
     ["AI drafts, summarizes, searches and reviews — guardrails block forbidden claims, a human approves.",
      "L'IA rédige, résume, cherche et révise — les garde-fous bloquent l'interdit, l'humain approuve."],
-    ["150+ automated checks on every change · French first · grounded in OACIQ, RBQ, AMF and Law 25.",
-     "150+ vérifications automatisées à chaque changement · français d'abord · ancré dans OACIQ, RBQ, AMF et Loi 25."],
+    ["150+ automated checks on every change · two complete languages · zero serious a11y violations.",
+     "150+ vérifications automatisées à chaque changement · deux langues complètes · zéro violation a11y sérieuse."],
+    ["OACIQ · Chambre des notaires · RBQ · AMF · Law 25 — each rule mapped to the product. Tap a card.",
+     "OACIQ · Chambre des notaires · RBQ · AMF · Loi 25 — chaque règle reflétée dans le produit. Touchez une carte."],
+    ["Owner-direct selling → buying groups → regulated investing partner → scale.",
+     "Vente directe → groupes d'achat → partenaire réglementé → mise à l'échelle."],
+    ["$3.5M seed · 18–24 months of runway · full use of funds in the business plan.",
+     "3,5 M$ d'amorçage · 18–24 mois de piste · utilisation détaillée dans le plan d'affaires."],
     ["Clé — the key to Quebec real estate.",
      "Clé — la clé de l'immobilier québécois."],
   ];
@@ -295,7 +394,7 @@
   const toggle = document.getElementById("toggle");
   let idx = -1, audio = null, playing = false, timer = null, lang = "en";
   const durOf = (sc) => Number(lang === "fr" ? sc.dataset.durFr : sc.dataset.durEn);
-  const srcOf = (sc) => (lang === "fr" ? `audio/fr/${sc.dataset.scene}.mp3` : `audio/${sc.dataset.scene}.m4a`);
+  const srcOf = (sc) => (lang === "fr" ? `audio/v3fr/${sc.dataset.scene}.mp3` : `audio/v3/${sc.dataset.scene}.m4a`);
   let total = 0, offsets = [];
   function recompute(){ total = 0; offsets = []; scenes.forEach((sc) => { offsets.push(total); total += durOf(sc); }); }
   recompute();
@@ -319,43 +418,52 @@
   function typeDemo(){
     const box = document.getElementById("typebox");
     if (!box) return;
-    const text = "Assistant IA — brouillon d'inscription :\\nTriplex rénové au Plateau, revenus stables, toiture 2022…";
-    box.textContent = "";
+    const text = "Assistant IA — brouillon d'inscription :\nTriplex rénové au Plateau, revenus stables, toiture 2022…";
+    [...box.childNodes].forEach((n) => { if (n.nodeType === 3) n.remove(); });
     let i = 0;
     const iv = setInterval(() => {
-      if (idx !== 6) { clearInterval(iv); return; }
-      box.textContent = text.slice(0, i++);
+      if (idx !== 8) { clearInterval(iv); return; }
+      const last = box.lastChild;
+      if (last && last.nodeType === 3) last.textContent = text.slice(0, i++);
+      else box.append(text.slice(0, i++));
       if (i > text.length) clearInterval(iv);
     }, 45);
   }
 
   function counters(sceneIdx){
     document.querySelectorAll(".scene.active .count").forEach((el) => {
-      const target = Number(el.dataset.n); const t0 = performance.now();
+      const target = Number(el.dataset.n); const dec = Number(el.dataset.dec ?? 0); const t0 = performance.now();
       const step = (t) => {
         const p = Math.min(1, (t - t0) / 1700);
-        el.textContent = Math.round(target * p).toLocaleString("en-CA");
+        el.textContent = dec ? (target * p).toFixed(dec) : Math.round(target * p).toLocaleString("en-CA");
         if (p < 1 && idx === sceneIdx) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
     });
   }
-  document.addEventListener("keydown", (e) => {
-    if (idx < 0) return;
-    if (e.key === "ArrowRight") go(Math.min(scenes.length - 1, idx + 1), true);
-    if (e.key === "ArrowLeft") go(Math.max(0, idx - 1), true);
-  });
 
-  function go(i, manual){
+  function donut(){
+    const C = 440;
+    [["d1", .40], ["d2", .30], ["d3", .20], ["d4", .10]].forEach(([id, frac], i) => {
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.style.strokeDasharray = `${C * frac - 4} 999`;
+      }, 300 + i * 320);
+    });
+  }
+
+  function go(i, _manual){
     if (i >= scenes.length) { playing = false; toggle.textContent = "▶"; toggle.setAttribute("aria-label","Play"); return; }
     idx = i;
     scenes.forEach((sc, j) => sc.classList.toggle("active", j === i));
     [...dots.children].forEach((d, j) => d.classList.toggle("on", j <= i));
-    capEn.textContent = lang === "fr" ? CAPS[i][1] : CAPS[i][0]; capFr.textContent = lang === "fr" ? CAPS[i][0] : CAPS[i][1];
+    capEn.textContent = lang === "fr" ? CAPS[i][1] : CAPS[i][0];
+    capFr.textContent = lang === "fr" ? CAPS[i][0] : CAPS[i][1];
     bar.style.width = ((offsets[i] / total) * 100) + "%";
     if (audio) { audio.onended = null; audio.pause(); }
     clearTimeout(timer);
-    if (i === 6) typeDemo();
+    if (i === 8) typeDemo();
+    if (i === 12) donut();
     counters(i);
     audio = new Audio(srcOf(scenes[i]));
     const advance = () => go(i + 1);
@@ -367,7 +475,6 @@
       }, 250);
     }).catch(() => { timer = setTimeout(advance, durOf(scenes[i]) * 1000); });
     playing = true; toggle.textContent = "⏸"; toggle.setAttribute("aria-label","Pause");
-    if (manual && audio.paused === false) { /* noop */ }
   }
 
   toggle.addEventListener("click", () => {
@@ -387,6 +494,11 @@
       go(0, true);
     });
   }
+  document.addEventListener("keydown", (e) => {
+    if (idx < 0) return;
+    if (e.key === "ArrowRight") go(Math.min(scenes.length - 1, idx + 1), true);
+    if (e.key === "ArrowLeft") go(Math.max(0, idx - 1), true);
+  });
 })();
 </script>
 </body>
