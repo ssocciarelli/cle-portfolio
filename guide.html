@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Clé demo — visitor guide: what to click, in what order, and what you will see at each step. Guide du visiteur pas à pas.">
+<meta property="og:title" content="Clé — Visitor guide / Guide du visiteur">
+<meta property="og:description" content="Step by step: how to try the Clé demo and what to expect at every step.">
+<meta property="og:url" content="https://ssocciarelli.github.io/cle-portfolio/guide.html">
+<meta property="og:image" content="https://ssocciarelli.github.io/cle-portfolio/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74 74'%3E%3Cg fill='none' stroke='%23eab308' stroke-width='10' stroke-linecap='round'%3E%3Cpath d='M 42.4 13.6 A 19 19 0 1 0 42.4 42.4'/%3E%3Cpath d='M 44 42 L 63 61'/%3E%3Cpath d='M 51 49 L 44.5 55.5'/%3E%3Cpath d='M 60 58 L 52 66'/%3E%3C/g%3E%3C/svg%3E">
+<title>Clé — Visitor guide</title>
+<style>
+  :root{--ink:#1d2226;--muted:#56687a;--faint:#8a97a5;--line:#e0dfdc;--paper:#f4f2ee;--accent:#0a66c2;--asoft:#eaf1f8;--ok:#0a7a53;--oksoft:#e8f5ef;--warn:#8a5a00;--warnsoft:#fdf3dd}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+  .serif{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.01em}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px}
+  header.hero{background:#fff;border-bottom:1px solid var(--line);padding:38px 0 34px}
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .crumb{font-size:13px}
+  .crumb a{color:var(--accent);text-decoration:none}
+  #langswap{border:1px solid #8aa5bd;color:var(--accent);background:#fff;border-radius:999px;padding:8px 18px;font-weight:800;font-size:13px;cursor:pointer}
+  h1{font-size:clamp(28px,4.6vw,44px);line-height:1.12;margin:16px 0 10px}
+  .lead{color:var(--muted);max-width:640px;font-size:17px;margin:0}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  .btn{display:inline-flex;align-items:center;gap:9px;border-radius:12px;padding:13px 20px;font-weight:700;text-decoration:none;font-size:15px;border:1px solid transparent}
+  .btn-gold{background:var(--accent);color:#fff}
+  .btn-line{border-color:#d6d3d1;color:var(--ink);background:#fff}
+  .kick{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .notice{border-left:3px solid var(--warn);background:var(--warnsoft);border-radius:0 12px 12px 0;padding:13px 18px;font-size:14px;margin-top:22px;color:#5a4a12}
+  main{padding:40px 0 8px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:14px;margin:0 0 26px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  .step-head{display:flex;gap:16px;align-items:baseline;padding:20px 24px 0}
+  .n{font-family:Georgia,serif;font-size:30px;color:var(--accent);min-width:38px;font-variant-numeric:tabular-nums}
+  .step h2{font-size:21px;margin:0}
+  .step-body{padding:8px 24px 20px 78px;display:flex;flex-direction:column;gap:10px}
+  @media(max-width:640px){.step-body{padding-left:24px}}
+  .do,.see{display:flex;gap:10px;font-size:15px}
+  .tag{flex-shrink:0;font-size:11px;font-weight:800;letter-spacing:.08em;border-radius:99px;padding:3px 11px;height:fit-content;margin-top:2px}
+  .tag-do{background:var(--asoft);color:var(--accent)}
+  .tag-see{background:var(--oksoft);color:var(--ok)}
+  .step figure{margin:0;border-top:1px solid var(--line)}
+  .step img{width:100%;height:auto;display:block}
+  .tip{font-size:13.5px;color:var(--muted)}
+  .tip b{color:var(--ink)}
+  code{background:var(--asoft);border-radius:6px;padding:1px 7px;font-size:14px;color:var(--accent);font-weight:700}
+  .facts{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:6px 0 40px}
+  .facts ul{margin:8px 0 0;padding-left:20px;font-size:14.5px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+  footer{padding:8px 0 48px;font-size:12px;color:var(--faint);line-height:1.6}
+  @media print{
+    body{background:#fff}
+    #langswap,.ctas{display:none}
+    .step{break-inside:avoid;box-shadow:none}
+    header.hero{padding:16px 0}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <span class="crumb"><a href="./" data-fr="← Portfolio Clé">← Clé portfolio</a></span>
+      <button id="langswap" aria-label="Passer au français">FR</button>
+    </div>
+    <span class="kick" data-fr="Guide du visiteur · 5 minutes">Visitor guide · 5 minutes</span>
+    <h1 class="serif" data-fr="Essayer Clé, pas à pas — ce que vous cliquez, ce que vous verrez.">Trying Clé, step by step — what you click, what you will see.</h1>
+    <p class="lead" data-fr="Aucune installation, aucun compte requis. Chaque étape vous dit quoi faire, puis exactement ce qui doit apparaître — comparez avec les captures.">No install, no account required. Each step tells you what to do, then exactly what should appear — compare with the screenshots.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="https://ssocciarelli.github.io/cle-mvp/" target="_blank" rel="noopener" data-fr="Ouvrir la démo →">Open the demo →</a>
+      <a class="btn btn-line" href="guide.pdf" data-fr="Version PDF (imprimable)">PDF version (printable)</a>
+    </div>
+    <p class="notice" data-fr="Tout est fictif et étiqueté : personnes, propriétés, permis, investissements. Aucune transaction réelle, aucun fonds, aucune donnée personnelle réelle. Recharger la page réinitialise la démonstration — c’est voulu.">Everything is fictional and labeled: people, properties, licences, investments. No real transactions, no funds, no real personal data. Reloading the page resets the demo — by design.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <article class="step">
+      <div class="step-head"><span class="n">1</span><h2 class="serif" data-fr="Ouvrez la démo">Open the demo</h2></div>
+      <div class="step-body">
+        <p class="do"><span class="tag tag-do" data-fr="FAITES">DO</span><span data-fr="Ouvrez ssocciarelli.github.io/cle-mvp — ordinateur ou téléphone, français par défaut, bascule EN en haut à droite.">Open ssocciarelli.github.io/cle-mvp — desktop or phone, French by default, EN toggle top right.</span></p>
+        <p class="see"><span class="tag tag-see" data-fr="VOUS VERREZ">YOU'LL SEE</span><span data-fr="La page d’accueil : trois boutons, les chiffres vivants du réseau de démonstration, et l’avertissement « données fictives ».">The landing page: three buttons, the demo network's live numbers, and the "fictional data" notice.</span></p>
+        <p class="tip" data-fr="<b>Pressé·e ?</b> « Visite guidée (2 min) » fait tout le tour automatiquement — huit arrêts, aucun clic requis."><b>Short on time?</b> "Visite guidée (2 min)" tours everything automatically — eight stops, no clicking needed.</p>
+      </div>
+      <figure><img src="shots/guide/01-accueil.png" alt="Clé landing page" data-fr-alt="Page d’accueil de Clé"></figure>
+    </article>
+
+    <article class="step">
+      <div class="step-head"><span class="n">2</span><h2 class="serif" data-fr="Entrez en un clic">Enter in one click</h2></div>
+      <div class="step-body">
+        <p class="do"><span class="tag tag-do" data-fr="FAITES">DO</span><span data-fr="Cliquez « Explorer avec un compte démo ». Ou passez par « Se connecter » : choisissez un des trois profils ; le code 2FA simulé est affiché à l’écran : <code>123456</code>.">Click "Explorer avec un compte démo". Or go through "Se connecter": pick one of the three profiles; the simulated 2FA code is shown on screen: <code>123456</code>.</span></p>
+        <p class="see"><span class="tag tag-see" data-fr="VOUS VERREZ">YOU'LL SEE</span><span data-fr="Vous êtes dans le fil, connecté·e comme Marie-Claude Bélanger (investisseuse). Trois profils démo existent : investisseuse, courtier, notaire — chacun voit le produit différemment.">You are in the feed, signed in as Marie-Claude Bélanger (investor). Three demo profiles exist: investor, broker, notary — each sees the product differently.</span></p>
+      </div>
+      <figure><img src="shots/guide/02-connexion.png" alt="Login page with demo accounts" data-fr-alt="Page de connexion avec comptes démo"></figure>
+    </article>
+
+    <article class="step">
+      <div class="step-head"><span class="n">3</span><h2 class="serif" data-fr="Le fil du réseau">The network feed</h2></div>
+      <div class="step-body">
+        <p class="do"><span class="tag tag-do" data-fr="FAITES">DO</span><span data-fr="Publiez quelque chose, aimez, commentez. Repérez la publication « Commandité ».">Post something, like, comment. Spot the post labeled "Commandité" (sponsored).</span></p>
+        <p class="see"><span class="tag tag-see" data-fr="VOUS VERREZ">YOU'LL SEE</span><span data-fr="Votre publication apparaît en tête de fil. La publicité est native mais toujours étiquetée — jamais plus d’une sur six.">Your post appears at the top of the feed. Advertising is native but always labeled — never more than one in six.</span></p>
+      </div>
+      <figure><img src="shots/guide/03-fil.png" alt="The feed" data-fr-alt="Le fil"></figure>
+    </article>
+
+    <article class="step">
+      <div class="step-head"><span class="n">4</span><h2 class="serif" data-fr="Le marché des propriétés">The property market</h2></div>
+      <div class="step-body">
+        <p class="do"><span class="tag tag-do" data-fr="FAITES">DO</span><span data-fr="Onglet « Marché ». Filtrez par région ou par prix, puis ouvrez « Triplex rénové — Plateau-Mont-Royal ».">"Marché" tab. Filter by region or price, then open "Triplex rénové — Plateau-Mont-Royal".</span></p>
+        <p class="see"><span class="tag tag-see" data-fr="VOUS VERREZ">YOU'LL SEE</span><span data-fr="Huit annonces approuvées, chacune avec sa silhouette par type de propriété, et le panneau cartographique avec son alternative accessible.">Eight approved listings, each with its property-type silhouette, and the map panel with its accessible alternative.</span></p>
+        <p class="tip" data-fr="Chaque fiche porte une carte « Révision publicitaire » : type de permis, agence, déclaration du vendeur, garantie légale — les mentions qu’exige l’encadrement du courtage, imposées par le serveur.">Every listing carries an "advertising review" card: licence type, agency, seller disclosure, legal warranty — the disclosures brokerage regulation requires, enforced server-side.</p>
+      </div>
+      <figure><img src="shots/guide/04-marche.png" alt="Property market" data-fr-alt="Marché des propriétés"></figure>
+    </article>
+
+    <article class="step">
+      <div class="step-head"><span class="n">5</span><h2 class="serif" data-fr="La calculatrice hypothécaire — les vraies maths canadiennes">The mortgage calculator — real Canadian math</h2></div>
+      <div class="step-body">
+        <p class="do"><span class="tag tag-do" data-fr="FAITES">DO</span><span data-fr="Sur la fiche, descendez à la calculatrice. Changez la mise de fonds, le taux ou la fréquence des paiements.">On the listing, scroll to the calculator. Change the down payment, the rate, or the payment frequency.</span></p>
+        <p class="see"><span class="tag tag-see" data-fr="VOUS VERREZ">YOU'LL SEE</span><span data-fr="Le paiement estimé se recalcule instantanément — capitalisation semestrielle canadienne exacte, pas l’approximation américaine.">The estimated payment recalculates instantly — exact Canadian semi-annual compounding, not the US approximation.</span></p>
+      </div>
+      <figure><img src="shots/guide/05-calculatrice.png" alt="Mortgage calculator" data-fr-alt="Calculatrice hypothécaire"></figure>
+    </article>
+
+    <article class="step">
+      <div class="step-head"><span class="n">6</span><h2 class="serif" data-fr="Une offre simulée ouvre une salle de transaction">A simulated offer opens a deal room</h2></div>
+      <div class="step-body">
+        <p class="do"><span class="tag tag-do" data-fr="FAITES">DO</span><span data-fr="Cliquez « Faire une offre simulée », choisissez une date de clôture, cochez la case « Je comprends qu’il s’agit d’une simulation », soumettez.">Click "Faire une offre simulée", pick a closing date, tick "I understand this is a simulation", submit.</span></p>
+        <p class="see"><span class="tag tag-see" data-fr="VOUS VERREZ">YOU'LL SEE</span><span data-fr="Une salle de transaction nommée d’après la propriété s’ouvre automatiquement : liste de vérification, messagerie de démonstration, statuts de documents. Le dialogue porte l’étiquette « SIMULATION UNIQUEMENT » — rien ici ne lie personne.">A deal room named after the property opens automatically: checklist, demo messaging, document statuses. The dialog is labeled "SIMULATION ONLY" — nothing here binds anyone.</span></p>
+      </div>
+      <figure><img src="shots/guide/06-offre.png" alt="Simulated offer dialog" data-fr-alt="Dialogue d’offre simulée"></figure>
+      <figure><img src="shots/guide/07-salle.png" alt="Deal room" data-fr-alt="Salle de transaction"></figure>
+    </article>
+
+    <article class="step">
+      <div class="step-head"><span class="n">7</span><h2 class="serif" data-fr="Entreprises sous dossier confidentiel">Businesses under confidential dossier</h2></div>
+      <div class="step-body">
+        <p class="do"><span class="tag tag-do" data-fr="FAITES">DO</span><span data-fr="Onglet « Entreprises ». Ouvrez un dossier verrouillé, puis signez l’entente de confidentialité simulée (votre nom tapé suffit).">"Entreprises" tab. Open a locked dossier, then sign the simulated NDA (your typed name is enough).</span></p>
+        <p class="see"><span class="tag tag-see" data-fr="VOUS VERREZ">YOU'LL SEE</span><span data-fr="Avant l’entente : jamais le vrai nom de l’entreprise. Après : le dossier complet, et chaque consultation est journalisée — le vendeur voit qui a regardé. La version française de l’entente est remise d’abord (Charte, art. 55).">Before signing: never the business's real name. After: the full dossier, and every view is logged — the seller sees who looked. The French version of the agreement is presented first (Charter, s. 55).</span></p>
+      </div>
+      <figure><img src="shots/guide/08-nda.png" alt="Confidential business with NDA" data-fr-alt="Entreprise confidentielle avec entente"></figure>
+    </article>
+
+    <article class="step">
+      <div class="step-head"><span class="n">8</span><h2 class="serif" data-fr="Projets & Équipes">Projects & Teams</h2></div>
+      <div class="step-body">
+        <p class="do"><span class="tag tag-do" data-fr="FAITES">DO</span><span data-fr="Onglet « Projets ». Ouvrez « Cohabitat Brossard », postulez à un rôle ouvert ou déposez une intention d’investissement.">"Projets" tab. Open "Cohabitat Brossard", apply to an open role, or record an investment intention.</span></p>
+        <p class="see"><span class="tag tag-see" data-fr="VOUS VERREZ">YOU'LL SEE</span><span data-fr="Le thermomètre des intentions progresse. Chaque intention est explicitement NON CONTRAIGNANTE — aucun engagement, aucun fonds.">The intentions thermometer moves. Every intention is explicitly NON-BINDING — no commitment, no funds.</span></p>
+      </div>
+      <figure><img src="shots/guide/09-projet.png" alt="Project detail" data-fr-alt="Fiche de projet"></figure>
+    </article>
+
+    <article class="step">
+      <div class="step-head"><span class="n">9</span><h2 class="serif" data-fr="L’espace investisseurs — entièrement simulé">The investor space — fully simulated</h2></div>
+      <div class="step-body">
+        <p class="do"><span class="tag tag-do" data-fr="FAITES">DO</span><span data-fr="Onglet « Investir ». Ouvrez une offre, puis tentez d’accéder à la salle de documents : effectuez la vérification SIMULÉE avec une identité FICTIVE — aucun numéro gouvernemental, aucun document, aucune biométrie n’est demandé.">"Investir" tab. Open an offering, then try the data room: complete the SIMULATED verification with a FICTIONAL identity — no government number, document, or biometrics is ever requested.</span></p>
+        <p class="see"><span class="tag tag-see" data-fr="VOUS VERREZ">YOU'LL SEE</span><span data-fr="L’avertissement permanent « SIMULATION — AUCUNE TRANSACTION RÉELLE », des rendements toujours marqués « non garanti », et une porte de salle de documents appliquée par le serveur — pas par l’écran.">The permanent "SIMULATION — NO REAL TRANSACTION" banner, returns always marked "not guaranteed", and a data-room gate enforced by the server — not by the screen.</span></p>
+      </div>
+      <figure><img src="shots/guide/10-investir.png" alt="Investor space" data-fr-alt="Espace investisseurs"></figure>
+      <figure><img src="shots/guide/11-offre-detail.png" alt="Offering detail with gate" data-fr-alt="Détail d’offre avec porte"></figure>
+    </article>
+
+    <article class="step">
+      <div class="step-head"><span class="n">10</span><h2 class="serif" data-fr="Les droits Loi 25, en vrai">Law 25 rights, for real</h2></div>
+      <div class="step-body">
+        <p class="do"><span class="tag tag-do" data-fr="FAITES">DO</span><span data-fr="Menu du compte (en haut à droite) → Paramètres → Confidentialité. Basculez un consentement, demandez l’export de vos données.">Account menu (top right) → Paramètres → Confidentialité. Toggle a consent, request your data export.</span></p>
+        <p class="see"><span class="tag tag-see" data-fr="VOUS VERREZ">YOU'LL SEE</span><span data-fr="Consentements granulaires et retirables, demandes d’accès et de suppression, l’état honnête des éléments qui attendent la production. Les droits ne sont pas une promesse : ils sont implémentés.">Granular, withdrawable consents, access and deletion requests, and an honest status for the features still awaiting production. The rights aren't a promise: they're implemented.</span></p>
+        <p class="tip" data-fr="Depuis ce même menu, « Changer de compte démo » vous fait vivre le produit comme courtier ou notaire.">From that same menu, "Changer de compte démo" lets you experience the product as the broker or the notary.</p>
+      </div>
+      <figure><img src="shots/guide/12-confidentialite.png" alt="Privacy settings" data-fr-alt="Réglages de confidentialité"></figure>
+    </article>
+
+    <div class="facts">
+      <span class="kick" data-fr="Bon à savoir">Good to know</span>
+      <ul>
+        <li data-fr="Recharger la page réinitialise tout — la démo publique ne conserve rien, volontairement.">Reloading resets everything — the public demo keeps nothing, deliberately.</li>
+        <li data-fr="FR/EN en un clic (en-tête), thème sombre selon votre système, clavier et lecteur d’écran pris en charge.">FR/EN in one click (header), dark theme follows your system, keyboard and screen readers supported.</li>
+        <li data-fr="Fonctionne sur téléphone — la même adresse.">Works on your phone — same address.</li>
+        <li data-fr="Envie du contexte d’affaires ? La présentation narrée (4 min) et le dossier de conformité sont sur le portfolio.">Want the business context? The narrated presentation (4 min) and the regulatory dossier are on the portfolio.</li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span data-fr="Prototype de démonstration — toutes les personnes, les entreprises et les chiffres sont fictifs. Les fonctionnalités d’investissement sont illustratives et ne constituent pas une offre de valeurs mobilières. Aucun paiement ni aucune transaction réelle.">Demonstration prototype — all people, businesses and figures are fictional. Investment features are illustrative and do not constitute an offering of securities. No payment or real transaction of any kind.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById("langswap");
+  var fr = false;
+  btn.addEventListener("click", function(){
+    fr = !fr;
+    document.documentElement.lang = fr ? "fr" : "en";
+    btn.textContent = fr ? "EN" : "FR";
+    btn.setAttribute("aria-label", fr ? "Switch to English" : "Passer au français");
+    document.querySelectorAll("[data-fr]").forEach(function(el){
+      if(!el.dataset.en) el.dataset.en = el.innerHTML;
+      el.innerHTML = fr ? el.dataset.fr : el.dataset.en;
+    });
+    document.querySelectorAll("[data-fr-alt]").forEach(function(el){
+      if(!el.dataset.enAlt) el.dataset.enAlt = el.getAttribute("alt");
+      el.setAttribute("alt", fr ? el.dataset.frAlt : el.dataset.enAlt);
+    });
+    document.title = fr ? "Clé — Guide du visiteur" : "Clé — Visitor guide";
+  });
+})();
+</script>
+</body>
+</html>
