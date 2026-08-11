@@ -10,7 +10,8 @@
  *   (base de préproduction semée : cd ~/cle/apps/api && pnpm seed:demo -- --reset)
  *
  * Lancer (playwright vient du monorepo cle) :
- *   cd ~/cle/apps/web && node ~/cle-portfolio/tools/capture-guide.mjs
+ *   cd ~/cle/apps/web && cp ~/cle-portfolio/tools/capture-guide.mjs ./_cap.mjs \
+ *     && node _cap.mjs && rm _cap.mjs
  *
  * Puis régénérer le PDF (voir tools/README.md) et redéployer le portfolio.
  * NOTE : mode DISTANT obligatoire — en mode maquette la session ne survit
