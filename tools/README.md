@@ -9,7 +9,7 @@ quand l'UI change — voici comment les régénérer, de façon reproductible.
    `capture-guide.mjs` pour les commandes exactes) et semer la base :
    `cd ~/cle/apps/api && pnpm seed:demo -- --reset`.
 
-2. **Recapturer les 12 images** — le script DOIT s'exécuter depuis l'arbre du
+2. **Recapturer les 13 images** (12 bureau + 1 mobile) — le script DOIT s'exécuter depuis l'arbre du
    monorepo `cle` (sinon Node résout `@playwright/test` depuis le dossier du
    script, où il n'existe pas). On le copie donc dans `apps/web` le temps du
    run :

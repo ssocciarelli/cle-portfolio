@@ -104,5 +104,25 @@ await page.goto(`${BASE}/app/settings/privacy`);
 await page.waitForTimeout(600);
 await shot("12-confidentialite");
 
+// 13 · Carte mobile (aperçu passif au-dessus des fiches) — contexte téléphone
+// séparé : il doit se connecter lui-même (la session ne traverse pas les contextes).
+const mctx = await browser.newContext({ viewport: { width: 375, height: 812 }, deviceScaleFactor: 2 });
+const m = await mctx.newPage();
+await m.goto(`${BASE}/login`);
+await m.locator("main button[type=button]").first().click();
+await m.waitForURL("**/app/feed", { timeout: 8000 }).catch(async () => {
+  await m.getByLabel(/code/i).fill("123456");
+  await m.locator("button[type=submit]").click();
+  await m.waitForURL("**/app/feed", { timeout: 8000 });
+});
+await m.goto(`${BASE}/app/marketplace/properties`);
+await m.getByRole("button", { name: "Voir la carte" }).click();
+await m.getByRole("img", { name: /Aperçu géographique/ }).waitFor();
+await m.waitForTimeout(350);
+// Cadrer légende + première fiche : la preuve « aperçu + liste ».
+await m.locator("#prop-map-overview figcaption").scrollIntoViewIfNeeded();
+await m.waitForTimeout(200);
+await m.screenshot({ path: `${OUT}/13-carte-mobile.png` });
+
 await browser.close();
 console.log("guide shots →", OUT);
